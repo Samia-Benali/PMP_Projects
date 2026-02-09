@@ -39,6 +39,14 @@ namespace serial {
      * Returns the number of bytes actually written
      */
     std::size_t write(const std::byte* data, std::size_t size);
+
+    ~OBinaryFile();
+
+    private:
+
+      FILE* file_bo;
+      std::string filename;
+      Mode mode;
   };
 
   /**

@@ -4,6 +4,17 @@
 
 #include "config.h"
 
+
+TEST(TestSerial, IBinaryFile_ConstructorKO){
+    EXPECT_THROW({serial::IBinaryFile file("non_existent_file.bin");},
+    std::runtime_error);
+}
+
+TEST(TestSerial, IBinaryFile_ConstructorOK){
+  std::string filepath = std::string(TEST_DATA_DIRECTORY);
+  EXPECT_NO_THROW({serial::IBinaryFile file(filepath + "/test.bin");});
+}
+
 int main(int argc, char* argv[]) {
   ::testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();

@@ -53,6 +53,28 @@ namespace serial {
      * error.
      */
     IBinaryFile(const std::string& filename);
+    /**
+     * @brief Destructor: closes the file
+     */
+    ~IBinaryFile();
+    /**
+     * @brief Copy constructor
+     */
+    IBinaryFile(const IBinaryFile& other);
+    /**
+     * @brief Copy assignment operator
+     */
+    IBinaryFile& operator=(const IBinaryFile& other);
+    // /**
+    //  * @brief Move constructor
+    //  */
+    // IBinaryFile(IBinaryFile&& other) noexcept;
+    // /**
+    //  * @brief Move assignment operator
+    //  */
+    // IBinaryFile& operator=(IBinaryFile&& other) noexcept;
+    
+
 
     /**
      * @brief Read `size` bytes from the file and store them in the buffer
@@ -61,6 +83,10 @@ namespace serial {
      * Returns the number of bytes actually read.
      */
     std::size_t read(std::byte* data, std::size_t size);
+
+  private:
+    FILE* file_bi;
+    std::string filename;
   };
 
 

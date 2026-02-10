@@ -33,6 +33,15 @@ namespace serial {
      */
     OBinaryFile(const std::string& filename, Mode mode = Truncate);
 
+    ~OBinaryFile();
+    OBinaryFile(const OBinaryFile& other);
+    OBinaryFile& operator=(const OBinaryFile& other);
+    OBinaryFile(OBinaryFile&& other) noexcept;
+    OBinaryFile& operator=(OBinaryFile&& other) noexcept;
+
+
+
+
     /**
      * @brief Write `size` bytes pointed by `data` in the file
      *
@@ -40,7 +49,6 @@ namespace serial {
      */
     std::size_t write(const std::byte* data, std::size_t size);
 
-    ~OBinaryFile();
 
     private:
 
@@ -48,6 +56,8 @@ namespace serial {
       std::string filename;
       Mode mode;
   };
+
+
 
   /**
    * @brief A file to be read
@@ -61,27 +71,12 @@ namespace serial {
      * error.
      */
     IBinaryFile(const std::string& filename);
-    /**
-     * @brief Destructor: closes the file
-     */
+
     ~IBinaryFile();
-    /**
-     * @brief Copy constructor
-     */
     IBinaryFile(const IBinaryFile& other);
-    /**
-     * @brief Copy assignment operator
-     */
     IBinaryFile& operator=(const IBinaryFile& other);
-    // /**
-    //  * @brief Move constructor
-    //  */
-    // IBinaryFile(IBinaryFile&& other) noexcept;
-    // /**
-    //  * @brief Move assignment operator
-    //  */
-    // IBinaryFile& operator=(IBinaryFile&& other) noexcept;
-    
+    IBinaryFile(IBinaryFile&& other) noexcept;
+    IBinaryFile& operator=(IBinaryFile&& other) noexcept;
 
 
     /**
@@ -114,21 +109,39 @@ namespace serial {
 
   template<typename T>
   OBinaryFile& operator<<(OBinaryFile& file, const std::vector<T>& x) {
+    uint64_t size = x.size();
+    file << size;
+    for(const auto& val : x){
+      file << val;
+    }
     return file;
   }
 
   template<typename T, std::size_t N>
   OBinaryFile& operator<<(OBinaryFile& file, const std::array<T,N>& x) {
+    for(const auto& val : x) {
+        file << val;
+    }
     return file;
   }
 
   template<typename K, typename V>
   OBinaryFile& operator<<(OBinaryFile& file, const std::map<K,V>& x) {
+    uint64_t size = x.size();
+    file << size;
+    for(const auto& pair : x) {
+        file << pair.first << pair.second;
+    }
     return file;
   }
 
   template<typename T>
   OBinaryFile& operator<<(OBinaryFile& file, const std::set<T>& x) {
+    uint64_t size = x.size();
+    file << size;
+    for(const auto& val : x) {
+        file << val;
+    }
     return file;
   }
 
@@ -148,21 +161,47 @@ namespace serial {
 
   template<typename T>
   IBinaryFile& operator>>(IBinaryFile& file, std::vector<T>& x) {
+    uint64_t size;
+    file >> size;
+    x.resize(size);
+    for(std::size_t i = 0; i < size; ++i) {
+        file >> x[i];
+    }
     return file;
   }
 
   template<typename T, std::size_t N>
   IBinaryFile& operator>>(IBinaryFile& file, std::array<T, N>& x) {
+    for(std::size_t i = 0; i < N; ++i) {
+        file >> x[i];
+    }
     return file;
   }
 
   template<typename K, typename V>
   IBinaryFile& operator>>(IBinaryFile& file, std::map<K, V>& x) {
+    x.clear();
+    uint64_t size;
+    file >> size;
+    for(std::size_t i = 0; i < size; ++i) {
+        K key;
+        V value;
+        file >> key >> value;
+        x.insert({key, value});
+    }
     return file;
   }
 
   template<typename T>
   IBinaryFile& operator>>(IBinaryFile& file, std::set<T>& x) {
+    x.clear();
+    uint64_t size;
+    file >> size;
+    for(std::size_t i = 0; i < size; ++i) {
+        T val;
+        file >> val;
+        x.insert(val);
+    }
     return file;
   }
 

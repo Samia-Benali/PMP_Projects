@@ -1,6 +1,7 @@
 #include "Serial.h"
 #include <cstdio>
 #include <stdexcept>
+#include <utility>
 
 namespace serial {
 
@@ -20,28 +21,25 @@ namespace serial {
             fclose(file_bi);
         }
     }
-    IBinaryFile::IBinaryFile(const IBinaryFile& other): IBinaryFile(other.filename) { 
+
+    IBinaryFile::IBinaryFile(const IBinaryFile& other) 
+    : IBinaryFile(other.filename) { 
+    }
+
+    IBinaryFile::IBinaryFile(IBinaryFile&& other) noexcept 
+    : file_bi(std::exchange(other.file_bi, nullptr)), 
+      filename(std::move(other.filename)) {
     }
 
     IBinaryFile& IBinaryFile::operator=(const IBinaryFile& other) {
-        if (this != &other) {
-            *this = IBinaryFile(other);
-        }
-        return *this;
+        return *this = IBinaryFile(other);
     }
 
-    // IBinaryFile::IBinaryFile(IBinaryFile&& other) noexcept : 
-    // file_bi(std::__exchange(other.file_bi, nullptr)), filename(std::move(other.filename)) {
-    // }
-
-    // IBinaryFile& IBinaryFile::operator=(IBinaryFile&& other) noexcept {
-    //     if (this != &other) {
-    //         std::swap(file_bi, other.file_bi);
-    //         std::swap(filename, other.filename);
-    //     }
-    //     return *this;
-    // }
-
+    IBinaryFile& IBinaryFile::operator=(IBinaryFile&& other) noexcept {
+        std::swap(file_bi, other.file_bi);
+        std::swap(filename, other.filename);
+        return *this;
+    }
 
 
 
@@ -49,7 +47,7 @@ namespace serial {
     :filename(filename), mode(mode) {
 
         //https://cplusplus.com/reference/cstdio/fwrite/
-        FILE* file = fopen("filename", Truncate ? "wb+" : "ab+");
+        FILE* file = fopen(filename.c_str(), (mode == Truncate) ? "wb+" : "ab+");
         if(file== nullptr) {
             throw std::runtime_error("Could not open the file for writing :" + filename);
         } 
@@ -59,11 +57,38 @@ namespace serial {
 
     }
 
-
     OBinaryFile::~OBinaryFile(){
         if(file_bo!=nullptr) {
             fclose(file_bo);
         }
+    }
+
+
+    OBinaryFile::~OBinaryFile(){
+        if(file_bo != nullptr) {
+            std::fclose(file_bo);
+        }
+    }
+
+    OBinaryFile::OBinaryFile(const OBinaryFile& other)
+    : OBinaryFile(other.filename, Append) {
+    }
+
+    OBinaryFile::OBinaryFile(OBinaryFile&& other) noexcept
+    : file_bo(std::exchange(other.file_bo, nullptr)), 
+      filename(std::move(other.filename)), 
+      mode(other.mode) {
+    }
+
+    OBinaryFile& OBinaryFile::operator=(const OBinaryFile& other) {
+        return *this = OBinaryFile(other);
+    }
+
+    OBinaryFile& OBinaryFile::operator=(OBinaryFile&& other) noexcept {
+        std::swap(file_bo, other.file_bo);
+        std::swap(filename, other.filename);
+        std::swap(mode, other.mode);
+        return *this;
     }
 
 

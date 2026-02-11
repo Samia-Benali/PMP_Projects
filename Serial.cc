@@ -217,7 +217,14 @@ namespace serial {
     }
 
     //https://www.developpez.net/forums/d1113169/c-cpp/cpp/conversion-little-endian-big-endian-inversement/
+
+    //Write
     std::size_t OBinaryFile::write(const std::byte* data, std::size_t size) {
+        std::size_t writting = fwrite(data,1,size,file_bo);
+        if(writting < size) {
+            perror("Write couldn't work");
+            return writting;
+        }
     }
 
 

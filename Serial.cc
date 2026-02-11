@@ -261,58 +261,61 @@ namespace serial {
     //                      Operator OBinary                    //
     /////////////////////////////////////////////////////////////
     OBinaryFile& operator<<(OBinaryFile& file, uint8_t x) {
-        swap_endian(x);
         file.write(reinterpret_cast<const std::byte*>(&x), sizeof(x));
         return file;
     }
 
     OBinaryFile& operator<<(OBinaryFile& file, int8_t x) {
-        uint8_t temp = static_cast<uint8_t>(x);
-        swap_endian(temp);
         file.write(reinterpret_cast<const std::byte*>(&x), sizeof(x));
         return file;
     }
 
     OBinaryFile& operator<<(OBinaryFile& file, uint16_t x) {
-        swap_endian(x);
-        file.write(reinterpret_cast<const std::byte*>(&x), sizeof(x));
+        uint16_t temp = x;
+        uint16_t swapped = swap_endian(temp);
+        file.write(reinterpret_cast<const std::byte*>(&swapped), sizeof(x));
         return file;
     }
 
     OBinaryFile& operator<<(OBinaryFile& file, int16_t x) {
         uint16_t temp = static_cast<uint16_t>(x);
-        uint16_t swapped = (temp);
+        uint16_t swapped = swap_endian(temp);
         file.write(reinterpret_cast<const std::byte*>(&swapped), sizeof(x));
         return file;
     }
 
     OBinaryFile& operator<<(OBinaryFile& file, uint32_t x) {
-        swap_endian(x);
-        file.write(reinterpret_cast<const std::byte*>(&x), sizeof(x));
+        uint16_t temp = x;
+        uint16_t swapped = swap_endian(temp);
+        file.write(reinterpret_cast<const std::byte*>(&swapped), sizeof(x));
         return file;
     }
 
     OBinaryFile& operator<<(OBinaryFile& file, int32_t x) {
-        swap_endian(x);
-        file.write(reinterpret_cast<const std::byte*>(&x), sizeof(x));
+        uint32_t temp = static_cast<uint32_t>(x);
+        uint32_t swapped = swap_endian(temp);
+        file.write(reinterpret_cast<const std::byte*>(&swapped), sizeof(x));
         return file;
     }
 
     OBinaryFile& operator<<(OBinaryFile& file, uint64_t x) {
-        swap_endian(x);
-        file.write(reinterpret_cast<const std::byte*>(&x), sizeof(x));
+        uint64_t temp = x;
+        uint64_t swapped = swap_endian(temp);
+        file.write(reinterpret_cast<const std::byte*>(&swapped), sizeof(x));
         return file;
     }
 
     OBinaryFile& operator<<(OBinaryFile& file, int64_t x) {
-        swap_endian(x);
-        file.write(reinterpret_cast<const std::byte*>(&x), sizeof(x));
+        uint64_t temp = static_cast<uint64_t>(x);
+        uint64_t swapped = swap_endian(temp);
+        file.write(reinterpret_cast<const std::byte*>(&swapped), sizeof(x));
         return file;
     }
 
     OBinaryFile& operator<<(OBinaryFile& file, char x) {
-        swap_endian(x);
-        file.write(reinterpret_cast<const std::byte*>(&x), sizeof(x));
+        uint8_t temp = x;
+        uint8_t swapped = swap_endian(temp);
+        file.write(reinterpret_cast<const std::byte*>(&swapped), sizeof(x));
         return file;
     }
 
@@ -327,17 +330,17 @@ namespace serial {
     }
 
     OBinaryFile& operator<<(OBinaryFile& file, bool x) {
-        swap_endian(x);
         file.write(reinterpret_cast<const std::byte*>(&x), sizeof(x));
         return file;
     }
 
     OBinaryFile& operator<<(OBinaryFile& file, const std::string& x) {
-        swap_endian(x);
-        uint64_t size = x.size();
+        uint64_t temp = x;
+        uint64_t swapped = swap_endian(temp);
+        uint64_t size = swapped.size();
         file << size;
         if (size > 0) {
-            file.write(reinterpret_cast<const std::byte*>(x.data()), size);
+            file.write(reinterpret_cast<const std::byte*>(swapped.data()), size);
         }
         return file;
     }

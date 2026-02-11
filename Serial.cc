@@ -5,7 +5,15 @@
 
 namespace {
     uint16_t swap(uint16_t val) {
-        return (val << 8) | (val >> 8);
+        return ((0xFF00 & val ) >> 8) | ((0xFF00 & val ) << 8);
+    }
+
+    uint32_t swap(uint32_t val) {
+        return ((0xFF00000000 & val) >> 24) | ((0x000000FF & val) << 24) | ((0x00FF0000 & val ) >> 8) | ((0x00FF0000 & val ) << 8);
+    }
+
+    uint64_t swap(uint64_t val) {
+        return ((0xFF00000000000000 & val) >> 56) | ((0x00000000000000FF & val) << 56) | ((0x00FF000000000000 & val) >> 40) | ((0x000000000000FF00 & val) >> 40) | ((0x0000FF0000000000 & val) >> 16) | ((0x0000000000FF0000 & val) << 16) | ((0x000000FF00000000 & val) >> 8) | ((0x00000000FF000000 & val) << 8) ;
     }
 
 

@@ -84,6 +84,14 @@ namespace serial {
         return *this;
     }
 
+    //https://www.developpez.net/forums/d1113169/c-cpp/cpp/conversion-little-endian-big-endian-inversement/
+
+    std::size_t OBinaryFile::write(const std::byte* data, std::size_t size) {
+        
+
+
+    }
+
 
 
 }

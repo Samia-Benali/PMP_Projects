@@ -3,6 +3,16 @@
 #include <stdexcept>
 #include <utility>
 
+namespace {
+    uint16_t swap(uint16_t val) {
+        return (val << 8) | (val >> 8);
+    }
+
+
+
+
+
+}
 namespace serial {
 
 
@@ -122,17 +132,17 @@ namespace serial {
         file >> size;
         x.resize(size);
         if (size > 0) {
-            //file.read(reinterpret_cast<std::byte*>(&x[0]), size);
+            file.read(reinterpret_cast<std::byte*>(&x[0]), size);
         }
         return file;
     }
 
-
-
     //Read
-
-    std::size_t read(std::byte* data, std::size_t size) {
-
+    std::size_t IBinaryFile::read(std::byte* data, std::size_t size) {
+        if (file_bi == nullptr){
+            return 0;
+        } 
+        return std::fread(data, 1, size, file_bi);
     }
 
 
@@ -189,11 +199,7 @@ namespace serial {
     }
 
     //https://www.developpez.net/forums/d1113169/c-cpp/cpp/conversion-little-endian-big-endian-inversement/
-
     std::size_t OBinaryFile::write(const std::byte* data, std::size_t size) {
-        
-
-
     }
 
 
@@ -265,10 +271,14 @@ namespace serial {
         uint64_t size = x.size();
         file << size;
         if (size > 0) {
-            // file.write(reinterpret_cast<const std::byte*>(x.data()), size);
+            file.write(reinterpret_cast<const std::byte*>(x.data()), size);
         }
         return file;
     }
 
 
 }
+
+
+
+

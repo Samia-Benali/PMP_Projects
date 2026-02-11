@@ -58,13 +58,6 @@ namespace serial {
     }
 
     OBinaryFile::~OBinaryFile(){
-        if(file_bo!=nullptr) {
-            fclose(file_bo);
-        }
-    }
-
-
-    OBinaryFile::~OBinaryFile(){
         if(file_bo != nullptr) {
             std::fclose(file_bo);
         }

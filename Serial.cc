@@ -116,36 +116,45 @@ namespace serial {
     }
 
     IBinaryFile& operator>>(IBinaryFile& file, uint16_t& x) {
-        file.read(reinterpret_cast<std::byte*>(&x), sizeof(x));
+        uint16_t temp;
+        file.read(reinterpret_cast<std::byte*>(&temp), sizeof(temp));
+        x = swap_endian(temp);
         return file;
     }
 
     IBinaryFile& operator>>(IBinaryFile& file, int16_t& x) {
-        file.read(reinterpret_cast<std::byte*>(&x), sizeof(x));
+        uint16_t temp;
+        file.read(reinterpret_cast<std::byte*>(&temp), sizeof(temp));
+        x = static_cast<int16_t>(swap_endian(temp));
         return file;
     }
 
     IBinaryFile& operator>>(IBinaryFile& file, uint32_t& x) {
-        file.read(reinterpret_cast<std::byte*>(&x), sizeof(x));
+        uint32_t temp;
+        file.read(reinterpret_cast<std::byte*>(&temp), sizeof(temp));
+        x = swap_endian(temp);
         return file;
     }
 
     IBinaryFile& operator>>(IBinaryFile& file, int32_t& x) {
-        u_int32_t temp;
-        file.read(reinterpret_cast<std::byte*>(&temp), sizeof(x));
-        swap_endian(temp);
-        x = static_cast<int32_t>(temp);
+        uint32_t temp;
+        file.read(reinterpret_cast<std::byte*>(&temp), sizeof(temp));
+        x = static_cast<int32_t>(swap_endian(temp));
         return file;
     }
 
     IBinaryFile& operator>>(IBinaryFile& file, uint64_t& x) {
-        file.read(reinterpret_cast<std::byte*>(&x), sizeof(x));
+        uint64_t temp;
+        file.read(reinterpret_cast<std::byte*>(&temp), sizeof(temp));
+        x = swap_endian(temp);
 
         return file;
     }
 
     IBinaryFile& operator>>(IBinaryFile& file, int64_t& x) {
-        file.read(reinterpret_cast<std::byte*>(&x), sizeof(x));
+        uint64_t temp;
+        file.read(reinterpret_cast<std::byte*>(&temp), sizeof(temp));
+        x = static_cast<int64_t>(swap_endian(temp));
         return file;
     }
 

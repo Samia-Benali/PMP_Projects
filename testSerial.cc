@@ -452,7 +452,31 @@ TEST(TestSerial, ReadAndWriteVectorsInVector) {
   }
 
   EXPECT_EQ(insert, read);
+}// TEST CROISES
+
+
+
+TEST(TestSerial, ReadAndWriteUint32Crossed) {
+  uint32_t toInsert = 0x43563232;
+  {
+    serial::OBinaryFile file(filepath + "/test.bin",serial::OBinaryFile::Truncate);
+    file << toInsert;
+
+  }
+
+  std::byte hasBeenRead[4];
+  {
+
+    serial::IBinaryFile file(filepath + "/test.bin");
+    file.read(hasBeenRead,4);
+
+  }
+  EXPECT_EQ(static_cast<std::byte>(0x43),hasBeenRead[0]);
+  EXPECT_EQ(static_cast<std::byte>(0x56),hasBeenRead[1]);
+  EXPECT_EQ(static_cast<std::byte>(0x32),hasBeenRead[2]);
+  EXPECT_EQ(static_cast<std::byte>(0x32),hasBeenRead[3]);
 }
+
 
 int main(int argc, char* argv[]) {
 ::testing::InitGoogleTest(&argc, argv);

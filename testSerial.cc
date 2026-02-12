@@ -243,6 +243,62 @@ TEST(TestSerial, ReadAndWriteString) {
 }
 
 
+
+TEST(TestSerial, ReadAndWriteMethodsWithBytes) {
+  std::byte toInsert[5];
+  toInsert[0] = static_cast<std::byte>(0xFE);
+  toInsert[1] = static_cast<std::byte>(0x00);
+  toInsert[2] = static_cast<std::byte>(0x23);
+  toInsert[3] = static_cast<std::byte>(0x88);
+  toInsert[4] = static_cast<std::byte>(0x48);
+  {
+    serial::OBinaryFile file(filepath + "/test.bin");
+    file.write(toInsert,5);
+
+  }
+
+  std::byte hasBeenRead[5];
+  {
+
+    serial::IBinaryFile file(filepath + "/test.bin");
+    file.read(hasBeenRead,5);
+
+  }
+
+  for(int i=0;i<5;i++){
+    EXPECT_EQ(toInsert[i],hasBeenRead[i]);
+  }
+}
+
+
+
+TEST(TestSerial, ReadAndWriteMethodsWithBytes) {
+  std::byte toInsert[5];
+  toInsert[0] = static_cast<std::byte>(0xFE);
+  toInsert[1] = static_cast<std::byte>(0x00);
+  toInsert[2] = static_cast<std::byte>(0x23);
+  toInsert[3] = static_cast<std::byte>(0x88);
+  toInsert[4] = static_cast<std::byte>(0x48);
+  {
+    serial::OBinaryFile file(filepath + "/test.bin");
+    file.write(toInsert,5);
+
+  }
+
+  std::byte hasBeenRead[5];
+  {
+
+    serial::IBinaryFile file(filepath + "/test.bin");
+    file.read(hasBeenRead,5);
+
+  }
+
+  for(int i=0;i<5;i++){
+    EXPECT_EQ(toInsert[i],hasBeenRead[i]);
+  }
+}
+
+
 TEST(TestSerial, ReadAndWriteVectorInt32) {
   std::vector<int32_t> insert = {1, 2, 3, 4, 5, -100, 42};
   {

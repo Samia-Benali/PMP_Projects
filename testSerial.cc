@@ -27,14 +27,34 @@ TEST(TestSerial, OBinaryFileConstructorNoError) {
 
 
 TEST(TestSerial, ReadAndWriteUint8) {
-  int toInsert = 3;
+  uint8_t toInsert = 3;
   {
     serial::OBinaryFile file(filepath + "/test.bin");
     file << toInsert;
 
   }
 
-  int hasBeenRead;
+  uint8_t hasBeenRead;
+  {
+
+    serial::IBinaryFile file(filepath + "/test.bin");
+    file >> hasBeenRead;
+
+  }
+
+  EXPECT_EQ(toInsert,hasBeenRead);
+}
+
+
+TEST(TestSerial, ReadAndWriteInt8) {
+  int8_t toInsert = -3;
+  {
+    serial::OBinaryFile file(filepath + "/test.bin");
+    file << toInsert;
+
+  }
+
+  int8_t hasBeenRead;
   {
 
     serial::IBinaryFile file(filepath + "/test.bin");
@@ -46,14 +66,14 @@ TEST(TestSerial, ReadAndWriteUint8) {
 }
 
 TEST(TestSerial, ReadOnANonExistentAndWriteUint8) {
-  int toInsert = 3;
+  uint8_t toInsert = 3;
   {
     serial::OBinaryFile file(filepath + "/test.bin");
     file << toInsert;
 
   }
 
-  int hasBeenRead = INT8_MAX;
+  uint8_t hasBeenRead = INT8_MAX;
   {
 
     EXPECT_THROW(serial::IBinaryFile file(filepath + "/test2.bin");,std::runtime_error);
@@ -65,14 +85,34 @@ TEST(TestSerial, ReadOnANonExistentAndWriteUint8) {
 
 
 TEST(TestSerial, ReadAndWriteUint16) {
-  int toInsert = 256;
+  uint16_t toInsert = 256;
   {
     serial::OBinaryFile file(filepath + "/test.bin");
     file << toInsert;
 
   }
 
-  int hasBeenRead;
+  uint16_t hasBeenRead;
+  {
+
+    serial::IBinaryFile file(filepath + "/test.bin");
+    file >> hasBeenRead;
+
+  }
+
+  EXPECT_EQ(toInsert,hasBeenRead);
+}
+
+
+TEST(TestSerial, ReadAndWriteInt16) {
+  int16_t toInsert = -256;
+  {
+    serial::OBinaryFile file(filepath + "/test.bin");
+    file << toInsert;
+
+  }
+
+  int16_t hasBeenRead;
   {
 
     serial::IBinaryFile file(filepath + "/test.bin");
@@ -85,14 +125,14 @@ TEST(TestSerial, ReadAndWriteUint16) {
 
 
 TEST(TestSerial, ReadAndWriteChar) {
-  int toInsert = 'c';
+  char toInsert = 'c';
   {
     serial::OBinaryFile file(filepath + "/test.bin");
     file << toInsert;
 
   }
 
-  int hasBeenRead;
+  char hasBeenRead;
   {
 
     serial::IBinaryFile file(filepath + "/test.bin");
@@ -104,14 +144,34 @@ TEST(TestSerial, ReadAndWriteChar) {
 }
 
 TEST(TestSerial, ReadAndWriteUint32) {
-  int toInsert = 65536;
+  uint32_t toInsert = 65536;
   {
     serial::OBinaryFile file(filepath + "/test.bin");
     file << toInsert;
 
   }
 
-  int hasBeenRead;
+  uint32_t hasBeenRead;
+  {
+
+    serial::IBinaryFile file(filepath + "/test.bin");
+    file >> hasBeenRead;
+
+  }
+
+  EXPECT_EQ(toInsert,hasBeenRead);
+}
+
+
+TEST(TestSerial, ReadAndWriteInt32) {
+  int32_t toInsert = -65536;
+  {
+    serial::OBinaryFile file(filepath + "/test.bin");
+    file << toInsert;
+
+  }
+
+  int32_t hasBeenRead;
   {
 
     serial::IBinaryFile file(filepath + "/test.bin");
@@ -124,14 +184,54 @@ TEST(TestSerial, ReadAndWriteUint32) {
 
 
 TEST(TestSerial, ReadAndWriteUint64) {
-  int toInsert = 4294967295;
+  uint64_t toInsert = 4294967295;
   {
     serial::OBinaryFile file(filepath + "/test.bin");
     file << toInsert;
 
   }
 
-  int hasBeenRead;
+  uint64_t hasBeenRead;
+  {
+
+    serial::IBinaryFile file(filepath + "/test.bin");
+    file >> hasBeenRead;
+
+  }
+
+  EXPECT_EQ(toInsert,hasBeenRead);
+}
+
+
+TEST(TestSerial, ReadAndWriteInt64) {
+  int64_t toInsert = -429496795;
+  {
+    serial::OBinaryFile file(filepath + "/test.bin");
+    file << toInsert;
+
+  }
+
+  int64_t hasBeenRead;
+  {
+
+    serial::IBinaryFile file(filepath + "/test.bin");
+    file >> hasBeenRead;
+
+  }
+
+  EXPECT_EQ(toInsert,hasBeenRead);
+}
+
+
+TEST(TestSerial, ReadAndWriteString) {
+  std::string toInsert = "yo";
+  {
+    serial::OBinaryFile file(filepath + "/test.bin");
+    file << toInsert;
+
+  }
+
+  std::string hasBeenRead;
   {
 
     serial::IBinaryFile file(filepath + "/test.bin");

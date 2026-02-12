@@ -122,8 +122,8 @@ namespace serial {
         return *this;
     }
 
-    std::size_t IBinaryFile::read(std::byte* buffer, std::size_t size) {
-        std::size_t reading = std::fread(buffer, 1, size, file_bi);
+    std::size_t IBinaryFile::read(std::byte* data, std::size_t size) {
+        std::size_t reading = std::fread(data, 1, size, file_bi);
         if (reading < size && std::ferror(file_bi)) {
              perror("Read couldn't work");
              return reading;

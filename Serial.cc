@@ -343,16 +343,16 @@ namespace serial {
         return file;
     }
 
-    OBinaryFile& operator<<(OBinaryFile& file, const std::string& x) {
-        uint64_t temp = x;
-        uint64_t swapped = swap_endian(temp);
-        uint64_t size = swapped.size();
-        file << size;
-        if (size > 0) {
-            file.write(reinterpret_cast<const std::byte*>(swapped.data()), size);
-        }
-        return file;
-    }
+    // OBinaryFile& operator<<(OBinaryFile& file, const std::string& x) {
+    //     uint64_t temp = x;
+    //     uint64_t swapped = swap_endian(temp);
+    //     uint64_t size = swapped.size();
+    //     file << size;
+    //     if (size > 0) {
+    //         file.write(reinterpret_cast<const std::byte*>(swapped.data()), size);
+    //     }
+    //     return file;
+    // }
 
 
 }

@@ -20,11 +20,9 @@ TEST(TestSerial, IBinaryFile_ConstructorOK2){
   EXPECT_NO_THROW({serial::IBinaryFile file(filepath + "/existent.bin");});
 }
 
-
 TEST(TestSerial, OBinaryFileConstructorNoError) {
   EXPECT_NO_THROW({serial::OBinaryFile file(filepath + "/non_existent");});
 }
-
 
 TEST(TestSerial, ReadAndWriteUint8) {
   uint8_t toInsert = 3;
@@ -44,7 +42,6 @@ TEST(TestSerial, ReadAndWriteUint8) {
 
   EXPECT_EQ(toInsert,hasBeenRead);
 }
-
 
 TEST(TestSerial, ReadAndWriteInt8) {
   int8_t toInsert = -3;
@@ -83,7 +80,6 @@ TEST(TestSerial, ReadOnANonExistentAndWriteUint8) {
   EXPECT_GT(hasBeenRead,toInsert);
 }
 
-
 TEST(TestSerial, ReadAndWriteUint16) {
   uint16_t toInsert = 256;
   {
@@ -103,7 +99,6 @@ TEST(TestSerial, ReadAndWriteUint16) {
   EXPECT_EQ(toInsert,hasBeenRead);
 }
 
-
 TEST(TestSerial, ReadAndWriteInt16) {
   int16_t toInsert = -256;
   {
@@ -122,7 +117,6 @@ TEST(TestSerial, ReadAndWriteInt16) {
 
   EXPECT_EQ(toInsert,hasBeenRead);
 }
-
 
 TEST(TestSerial, ReadAndWriteChar) {
   char toInsert = 'c';
@@ -162,7 +156,6 @@ TEST(TestSerial, ReadAndWriteUint32) {
   EXPECT_EQ(toInsert,hasBeenRead);
 }
 
-
 TEST(TestSerial, ReadAndWriteInt32) {
   int32_t toInsert = -65536;
   {
@@ -181,7 +174,6 @@ TEST(TestSerial, ReadAndWriteInt32) {
 
   EXPECT_EQ(toInsert,hasBeenRead);
 }
-
 
 TEST(TestSerial, ReadAndWriteUint64) {
   uint64_t toInsert = 4294967295;
@@ -202,7 +194,6 @@ TEST(TestSerial, ReadAndWriteUint64) {
   EXPECT_EQ(toInsert,hasBeenRead);
 }
 
-
 TEST(TestSerial, ReadAndWriteInt64) {
   int64_t toInsert = -429496795;
   {
@@ -222,7 +213,6 @@ TEST(TestSerial, ReadAndWriteInt64) {
   EXPECT_EQ(toInsert,hasBeenRead);
 }
 
-
 TEST(TestSerial, ReadAndWriteString) {
   std::string toInsert = "yo";
   {
@@ -241,36 +231,6 @@ TEST(TestSerial, ReadAndWriteString) {
 
   EXPECT_EQ(toInsert,hasBeenRead);
 }
-
-
-
-TEST(TestSerial, ReadAndWriteMethodsWithBytes) {
-  std::byte toInsert[5];
-  toInsert[0] = static_cast<std::byte>(0xFE);
-  toInsert[1] = static_cast<std::byte>(0x00);
-  toInsert[2] = static_cast<std::byte>(0x23);
-  toInsert[3] = static_cast<std::byte>(0x88);
-  toInsert[4] = static_cast<std::byte>(0x48);
-  {
-    serial::OBinaryFile file(filepath + "/test.bin");
-    file.write(toInsert,5);
-
-  }
-
-  std::byte hasBeenRead[5];
-  {
-
-    serial::IBinaryFile file(filepath + "/test.bin");
-    file.read(hasBeenRead,5);
-
-  }
-
-  for(int i=0;i<5;i++){
-    EXPECT_EQ(toInsert[i],hasBeenRead[i]);
-  }
-}
-
-
 
 TEST(TestSerial, ReadAndWriteMethodsWithBytes) {
   std::byte toInsert[5];
@@ -331,6 +291,22 @@ TEST(TestSerial, ReadAndWriteVectorString) {
   EXPECT_EQ(insert, read);
 }
 
+TEST(TestSerial, ReadAndWriteVectorBool) {
+  std::vector<bool> insert = {true, false, true, true, false, false, true};
+  {
+    serial::OBinaryFile file(filepath + "/test.bin");
+    file << insert;
+  }
+
+  std::vector<bool> read;
+  {
+    serial::IBinaryFile file(filepath + "/test.bin");
+    file >> read;
+  }
+
+  EXPECT_EQ(insert, read);
+}
+
 TEST(TestSerial, ReadAndWriteEmptyVector) {
   std::vector<int32_t> insert = {};
   {
@@ -348,7 +324,6 @@ TEST(TestSerial, ReadAndWriteEmptyVector) {
   EXPECT_TRUE(read.empty());
 }
 
-
 TEST(TestSerial, ReadAndWriteArrayDouble) {
   std::array<double, 4> insert = {3.14, 2.71, -0.01, 123.456};
   {
@@ -365,6 +340,21 @@ TEST(TestSerial, ReadAndWriteArrayDouble) {
   EXPECT_EQ(insert, read);
 }
 
+TEST(TestSerial, ReadAndWriteArrayBool) {
+  std::array<bool, 5> insert = {true, false, false, true, true};
+  {
+    serial::OBinaryFile file(filepath + "/test.bin");
+    file << insert;
+  }
+
+  std::array<bool, 5> read;
+  {
+    serial::IBinaryFile file(filepath + "/test.bin");
+    file >> read;
+  }
+
+  EXPECT_EQ(insert, read);
+}
 
 TEST(TestSerial, ReadAndWriteSetInt) {
   std::set<int32_t> insert = {5, 1, 4, 2, 3}; 
@@ -382,7 +372,6 @@ TEST(TestSerial, ReadAndWriteSetInt) {
   EXPECT_EQ(insert, read);
 }
 
-
 TEST(TestSerial, ReadAndWriteMapIntString) {
   std::map<int32_t, std::string> insert = {
       {1, "one"},
@@ -396,6 +385,45 @@ TEST(TestSerial, ReadAndWriteMapIntString) {
   }
 
   std::map<int32_t, std::string> read;
+  {
+    serial::IBinaryFile file(filepath + "/test.bin");
+    file >> read;
+  }
+
+  EXPECT_EQ(insert, read);
+}
+
+TEST(TestSerial, ReadAndWriteMapBoolValues) {
+  std::map<std::string, bool> insert = {
+      {"oki", true},
+      {"nope", false},
+      {"YEPPPP", true}
+  };
+  {
+    serial::OBinaryFile file(filepath + "/test.bin");
+    file << insert;
+  }
+
+  std::map<std::string, bool> read;
+  {
+    serial::IBinaryFile file(filepath + "/test.bin");
+    file >> read;
+  }
+
+  EXPECT_EQ(insert, read);
+}
+
+TEST(TestSerial, ReadAndWriteMapBoolKeys) {
+  std::map<bool, std::string> insert = {
+      {true, "Vrai"},
+      {false, "Faux"}
+  };
+  {
+    serial::OBinaryFile file(filepath + "/test.bin");
+    file << insert;
+  }
+
+  std::map<bool, std::string> read;
   {
     serial::IBinaryFile file(filepath + "/test.bin");
     file >> read;

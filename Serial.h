@@ -205,6 +205,19 @@ namespace serial {
     return file;
   }
 
+  template<>
+  inline IBinaryFile& operator>>(IBinaryFile& file, std::vector<bool>& x) {
+      uint64_t size;
+      file >> size;
+      x.resize(size);
+      for (std::size_t i = 0; i < size; ++i) {
+          bool b;
+          file >> b;  
+          x[i] = b;   
+      }
+      return file;
+  }
+
 } // namespace serial
 
 #endif // SERIAL_H

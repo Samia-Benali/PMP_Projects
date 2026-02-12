@@ -8,7 +8,7 @@
 std::string filepath = std::string(TEST_DATA_DIRECTORY);
 
 TEST(TestSerial, IBinaryFile_ConstructorKO){
-    EXPECT_THROW({serial::IBinaryFile file("non_existent_file.bin");},
+    EXPECT_THROW({serial::IBinaryFile file("/non_existent");},
     std::runtime_error);
 }
 
@@ -22,7 +22,7 @@ TEST(TestSerial, IBinaryFile_ConstructorOK2){
 
 
 TEST(TestSerial, OBinaryFileConstructorNoError) {
-  EXPECT_NO_THROW({serial::OBinaryFile file(filepath + "/non_existent_file.bin");});
+  EXPECT_NO_THROW({serial::OBinaryFile file(filepath + "/non_existent");});
 }
 
 

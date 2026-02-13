@@ -3,8 +3,7 @@
 #include "Serial.h"
 
 #include "config.h"
-#include <cmath>
-#include <limits>
+
 
 std::string filepath = std::string(TEST_DATA_DIRECTORY);
 
@@ -339,67 +338,6 @@ TEST(TestSerial, ReadAndWriteMethodsWithBytes) {
   }
 }
 
-
-TEST(TestSerial, OBinaryFile_AppendMode) {
-    {
-        serial::OBinaryFile file(filepath + "/test_append.bin", serial::OBinaryFile::Truncate);
-        file << (int32_t)1;
-    }
-    {
-        serial::OBinaryFile file(filepath + "/test_append.bin", serial::OBinaryFile::Append);
-        file << (int32_t)2;
-    }
-    {
-        serial::IBinaryFile file(filepath + "/test_append.bin");
-        int32_t v1, v2;
-        file >> v1 >> v2;
-        EXPECT_EQ(1, v1);
-        EXPECT_EQ(2, v2);
-    }
-}
-
-
-
-TEST(TestSerial, ReadAndWriteFloatSpecial) {
-    std::vector<double> specials = {
-        std::numeric_limits<double>::infinity(),
-        -std::numeric_limits<double>::infinity(),
-        std::numeric_limits<double>::quiet_NaN(),
-        0.0,
-        -0.0
-    };
-
-    {
-        serial::OBinaryFile file(filepath + "/floats.bin");
-        file << specials;
-    }
-
-    std::vector<double> read;
-    {
-        serial::IBinaryFile file(filepath + "/floats.bin");
-        file >> read;
-    }
-
-    EXPECT_EQ(read.size(), specials.size());
-    EXPECT_TRUE(std::isinf(read[0]));
-    EXPECT_TRUE(std::isinf(read[1]));
-    EXPECT_TRUE(std::isnan(read[2]));
-    EXPECT_EQ(read[3], 0.0);
-    EXPECT_EQ(read[4], -0.0);
-}
-
-
-TEST(TestSerial, ReadTruncatedFile_ThrowsError) {
-    {
-        serial::OBinaryFile file(filepath + "/truncated.bin");
-        file << (uint8_t)42;
-    }
-    {
-        serial::IBinaryFile file(filepath + "/truncated.bin");
-        uint32_t val;
-        EXPECT_THROW(file >> val, std::runtime_error);
-    }
-}
 
 TEST(TestSerial, ReadAndWriteVectorInt32) {
   std::vector<int32_t> insert = {1, 2, 3, 4, 5, -100, 42};

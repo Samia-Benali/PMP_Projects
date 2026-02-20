@@ -2,6 +2,7 @@
 	"sources" : 
 	[
 		{
+<<<<<<< HEAD
 			"file" : "/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-subbuild/CMakeFiles/googletest-populate"
 		},
 		{
@@ -33,6 +34,39 @@
 		},
 		{
 			"file" : "/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update.rule"
+=======
+			"file" : "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild/CMakeFiles/googletest-populate"
+		},
+		{
+			"file" : "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild/CMakeFiles/googletest-populate.rule"
+		},
+		{
+			"file" : "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild/CMakeFiles/googletest-populate-complete.rule"
+		},
+		{
+			"file" : "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build.rule"
+		},
+		{
+			"file" : "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure.rule"
+		},
+		{
+			"file" : "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download.rule"
+		},
+		{
+			"file" : "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install.rule"
+		},
+		{
+			"file" : "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir.rule"
+		},
+		{
+			"file" : "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch.rule"
+		},
+		{
+			"file" : "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test.rule"
+		},
+		{
+			"file" : "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update.rule"
+>>>>>>> 426b7249d2915e509a92cc46a7129bd99e855fcc
 		}
 	],
 	"target" : 

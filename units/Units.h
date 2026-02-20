@@ -24,15 +24,14 @@ namespace phy {
    * Various type aliases
    */
 
-  using Metre               = Unit</* implementation defined */>;
-  using Kilogram            = Unit</* implementation defined */>;
-  using Second              = Unit</* implementation defined */>;
-  using Ampere              = Unit</* implementation defined */>;
-  using Kelvin              = Unit</* implementation defined */>;
-  using Mole                = Unit</* implementation defined */>;
-  using Candela             = Unit</* implementation defined */>;
-  using Radian              = Unit</* implementation defined */>;
-
+  using Metre               = Unit<1,0,0,0,0,0,0>;
+  using Kilogram            = Unit<0,1,0,0,0,0,0>;
+  using Second              = Unit<0,0,1,0,0,0,0>;
+  using Ampere              = Unit<0,0,0,1,0,0,0>;
+  using Kelvin              = Unit<0,0,0,0,1,0,0>;
+  using Mole                = Unit<0,0,0,0,0,1,0>;
+  using Candela             = Unit<0,0,0,0,0,0,1>;
+  using Radian              = Unit<0,0,0,0,0,0,0>;
   using Volt                = Unit</* implementation defined */>;
   using Ohm                 = Unit</* implementation defined */>;
   using Watt                = Unit</* implementation defined */>;

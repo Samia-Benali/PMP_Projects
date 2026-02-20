@@ -85,11 +85,10 @@ namespace phy {
   /*
    * Some weird quantities
    */
-
-  using Mile                  = Qty<Yard,std::ratio<1760,1>>;
-  using Yard                  = Qty<Foot,std::ratio<3,1>>;
-  using Foot                  = Qty<Inch,std::ratio<12,1>>;
   using Inch                  = Qty<Metre, std::ratio<10000,393701>>;
+  using Foot                  = Qty<Inch,std::ratio<12,1>>;
+  using Yard                  = Qty<Foot,std::ratio<3,1>>;
+  using Mile                  = Qty<Yard,std::ratio<1760,1>>;
   using Knot                  = Qty<MeterSecond,std::ratio<100000000,51444444>>;
 
   /*

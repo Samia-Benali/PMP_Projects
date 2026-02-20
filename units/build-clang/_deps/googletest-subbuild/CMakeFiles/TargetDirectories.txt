@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-subbuild/CMakeFiles/googletest-populate.dir
-/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-subbuild/CMakeFiles/edit_cache.dir
-/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-subbuild/CMakeFiles/rebuild_cache.dir
-=======
 /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild/CMakeFiles/googletest-populate.dir
 /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild/CMakeFiles/edit_cache.dir
 /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild/CMakeFiles/rebuild_cache.dir
->>>>>>> 8cdadb6496d044ad7bece3f83df068fab6a7b582

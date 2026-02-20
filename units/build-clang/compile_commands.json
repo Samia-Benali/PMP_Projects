@@ -1,34 +1,5 @@
 [
 {
-<<<<<<< HEAD
-  "directory": "/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang",
-  "command": "/usr/bin/clang++  -I/home/samia/Documents/L3-CMI/PMP_Projects/units/googletest/googletest/include -I/home/samia/Documents/L3-CMI/PMP_Projects/units/googletest/googletest -isystem /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src/googletest/include -isystem /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src/googletest -Wall -Wextra -g -O0 -fsanitize=address,undefined -o CMakeFiles/testUnits.dir/testUnits.cc.o -c /home/samia/Documents/L3-CMI/PMP_Projects/units/testUnits.cc",
-  "file": "/home/samia/Documents/L3-CMI/PMP_Projects/units/testUnits.cc",
-  "output": "CMakeFiles/testUnits.dir/testUnits.cc.o"
-},
-{
-  "directory": "/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-build/googlemock",
-  "command": "/usr/bin/clang++  -I/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src/googlemock/include -I/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src/googlemock -isystem /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src/googletest/include -isystem /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src/googletest -Wall -Wshadow -Wconversion -Wundef -DGTEST_HAS_PTHREAD=1 -fexceptions -W -Wpointer-arith -Wreturn-type -Wcast-qual -Wwrite-strings -Wswitch -Wunused-parameter -Wcast-align -Winline -Wredundant-decls -Wchar-subscripts -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src/googlemock/src/gmock-all.cc",
-  "file": "/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src/googlemock/src/gmock-all.cc",
-  "output": "_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o"
-},
-{
-  "directory": "/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-build/googlemock",
-  "command": "/usr/bin/clang++  -isystem /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src/googlemock/include -isystem /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src/googlemock -isystem /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src/googletest/include -isystem /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src/googletest -Wall -Wshadow -Wconversion -Wundef -DGTEST_HAS_PTHREAD=1 -fexceptions -W -Wpointer-arith -Wreturn-type -Wcast-qual -Wwrite-strings -Wswitch -Wunused-parameter -Wcast-align -Winline -Wredundant-decls -Wchar-subscripts -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src/googlemock/src/gmock_main.cc",
-  "file": "/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src/googlemock/src/gmock_main.cc",
-  "output": "_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o"
-},
-{
-  "directory": "/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-build/googletest",
-  "command": "/usr/bin/clang++  -I/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src/googletest/include -I/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src/googletest -Wall -Wshadow -Wconversion -Wundef -DGTEST_HAS_PTHREAD=1 -fexceptions -W -Wpointer-arith -Wreturn-type -Wcast-qual -Wwrite-strings -Wswitch -Wunused-parameter -Wcast-align -Winline -Wredundant-decls -Wchar-subscripts -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src/googletest/src/gtest-all.cc",
-  "file": "/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src/googletest/src/gtest-all.cc",
-  "output": "_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
-},
-{
-  "directory": "/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-build/googletest",
-  "command": "/usr/bin/clang++  -isystem /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src/googletest/include -isystem /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src/googletest -Wall -Wshadow -Wconversion -Wundef -DGTEST_HAS_PTHREAD=1 -fexceptions -W -Wpointer-arith -Wreturn-type -Wcast-qual -Wwrite-strings -Wswitch -Wunused-parameter -Wcast-align -Winline -Wredundant-decls -Wchar-subscripts -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src/googletest/src/gtest_main.cc",
-  "file": "/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src/googletest/src/gtest_main.cc",
-=======
   "directory": "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang",
   "command": "/usr/bin/clang++  -I/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/googletest/googletest/include -I/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/googletest/googletest -isystem /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-src/googletest/include -isystem /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-src/googletest -Wall -Wextra -g -O0 -fsanitize=address,undefined -o CMakeFiles/testUnits.dir/testUnits.cc.o -c /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/testUnits.cc",
   "file": "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/testUnits.cc",
@@ -56,7 +27,6 @@
   "directory": "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-build/googletest",
   "command": "/usr/bin/clang++  -isystem /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-src/googletest/include -isystem /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-src/googletest -Wall -Wshadow -Wconversion -Wundef -DGTEST_HAS_PTHREAD=1 -fexceptions -W -Wpointer-arith -Wreturn-type -Wcast-qual -Wwrite-strings -Wswitch -Wunused-parameter -Wcast-align -Winline -Wredundant-decls -Wchar-subscripts -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-src/googletest/src/gtest_main.cc",
   "file": "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-src/googletest/src/gtest_main.cc",
->>>>>>> 8cdadb6496d044ad7bece3f83df068fab6a7b582
   "output": "_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
 }
 ]

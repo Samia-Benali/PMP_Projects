@@ -28,13 +28,8 @@ set_property(GLOBAL PROPERTY _CMAKE_FindGit_GIT_EXECUTABLE_VERSION
 include(ExternalProject)
 ExternalProject_Add(googletest-populate
                      "UPDATE_DISCONNECTED" "False" "GIT_REPOSITORY" "https://github.com/google/googletest.git" "EXTERNALPROJECT_INTERNAL_ARGUMENT_SEPARATOR" "GIT_TAG" "52eb8108c5bdec04579160ae17225d66034bd723"
-<<<<<<< HEAD
-                    SOURCE_DIR          "/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src"
-                    BINARY_DIR          "/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-build"
-=======
                     SOURCE_DIR          "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-src"
                     BINARY_DIR          "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-build"
->>>>>>> 8cdadb6496d044ad7bece3f83df068fab6a7b582
                     CONFIGURE_COMMAND   ""
                     BUILD_COMMAND       ""
                     INSTALL_COMMAND     ""

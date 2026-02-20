@@ -54,17 +54,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-<<<<<<< HEAD
-CMAKE_SOURCE_DIR = /home/samia/Documents/L3-CMI/PMP_Projects/units
-
-# The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang
-=======
 CMAKE_SOURCE_DIR = /home/kilian/Bureau/Univ/PMP/PMP_Projects/units
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang
->>>>>>> 8cdadb6496d044ad7bece3f83df068fab6a7b582
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -142,24 +135,14 @@ CMakeFiles/testUnits.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest
 CMakeFiles/testUnits.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/testUnits.dir/build.make CMakeFiles/testUnits.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/testUnits.dir/build.make CMakeFiles/testUnits.dir/build
-<<<<<<< HEAD
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/CMakeFiles --progress-num=9,10 "Built target testUnits"
-=======
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/CMakeFiles --progress-num=9,10 "Built target testUnits"
->>>>>>> 8cdadb6496d044ad7bece3f83df068fab6a7b582
 .PHONY : CMakeFiles/testUnits.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/testUnits.dir/rule: cmake_check_build_system
-<<<<<<< HEAD
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/CMakeFiles 6
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/testUnits.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/CMakeFiles 0
-=======
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/testUnits.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/CMakeFiles 0
->>>>>>> 8cdadb6496d044ad7bece3f83df068fab6a7b582
 .PHONY : CMakeFiles/testUnits.dir/rule
 
 # Convenience name for target.
@@ -178,24 +161,14 @@ CMakeFiles/testUnits.dir/clean:
 _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build
-<<<<<<< HEAD
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/CMakeFiles --progress-num=1,2 "Built target gmock"
-=======
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/CMakeFiles --progress-num=1,2 "Built target gmock"
->>>>>>> 8cdadb6496d044ad7bece3f83df068fab6a7b582
 .PHONY : _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
 _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/rule: cmake_check_build_system
-<<<<<<< HEAD
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/CMakeFiles 0
-=======
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/CMakeFiles 0
->>>>>>> 8cdadb6496d044ad7bece3f83df068fab6a7b582
 .PHONY : _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/rule
 
 # Convenience name for target.
@@ -215,24 +188,14 @@ _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all: _deps/googletes
 _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build
-<<<<<<< HEAD
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/CMakeFiles --progress-num=3,4 "Built target gmock_main"
-=======
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/CMakeFiles --progress-num=3,4 "Built target gmock_main"
->>>>>>> 8cdadb6496d044ad7bece3f83df068fab6a7b582
 .PHONY : _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
 _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/rule: cmake_check_build_system
-<<<<<<< HEAD
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/CMakeFiles 6
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/CMakeFiles 0
-=======
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/CMakeFiles 0
->>>>>>> 8cdadb6496d044ad7bece3f83df068fab6a7b582
 .PHONY : _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/rule
 
 # Convenience name for target.
@@ -251,24 +214,14 @@ _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/clean:
 _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build
-<<<<<<< HEAD
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/CMakeFiles --progress-num=5,6 "Built target gtest"
-=======
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/CMakeFiles --progress-num=5,6 "Built target gtest"
->>>>>>> 8cdadb6496d044ad7bece3f83df068fab6a7b582
 .PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
 _deps/googletest-build/googletest/CMakeFiles/gtest.dir/rule: cmake_check_build_system
-<<<<<<< HEAD
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/CMakeFiles 0
-=======
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/CMakeFiles 0
->>>>>>> 8cdadb6496d044ad7bece3f83df068fab6a7b582
 .PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest.dir/rule
 
 # Convenience name for target.
@@ -287,24 +240,14 @@ _deps/googletest-build/googletest/CMakeFiles/gtest.dir/clean:
 _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
-<<<<<<< HEAD
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/CMakeFiles --progress-num=7,8 "Built target gtest_main"
-=======
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/CMakeFiles --progress-num=7,8 "Built target gtest_main"
->>>>>>> 8cdadb6496d044ad7bece3f83df068fab6a7b582
 .PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
 _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/rule: cmake_check_build_system
-<<<<<<< HEAD
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/CMakeFiles 0
-=======
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/CMakeFiles 0
->>>>>>> 8cdadb6496d044ad7bece3f83df068fab6a7b582
 .PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/rule
 
 # Convenience name for target.

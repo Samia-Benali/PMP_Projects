@@ -1,5 +1,0 @@
-if(EXISTS "/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/testUnits[1]_tests.cmake")
-  include("/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/testUnits[1]_tests.cmake")
-else()
-  add_test(testUnits_NOT_BUILT testUnits_NOT_BUILT)
-endif()

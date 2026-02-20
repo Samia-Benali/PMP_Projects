@@ -1,4 +1,5 @@
 # Hashes of file build rules.
+<<<<<<< HEAD
 6d615988162e008be88b59a59c2814c8 CMakeFiles/googletest-populate
 e4d0a56681d34cc28d6e4c6e6593a188 CMakeFiles/googletest-populate-complete
 1b58a24b9d0ae7e35984faf6a3bc2e26 googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build
@@ -9,3 +10,15 @@ f21912f78445edf3bb3ad8cadfa52668 googletest-populate-prefix/src/googletest-popul
 e1c89fb938dbb22185a8d38cb8eec78d googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch
 ee04398558740be92617a5b0514e1d02 googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test
 263a82f041c5169199319b3de5f7ca61 googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update
+=======
+8fce2843c47efc2091f0760fea5d3cd3 CMakeFiles/googletest-populate
+6645fb3d5cd3b4130fde9f0d1a89424c CMakeFiles/googletest-populate-complete
+6f8b22f6332486212d2c92017be5ecb9 googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build
+3db963f50fed5074a4c33a0f19b8cabb googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure
+8dee041e9035332b79c90e606009abd8 googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download
+9af7299bde221ee47d7aa46602498424 googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install
+711fbb58330e195996009dd66523833a googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir
+1bda60bdca2623013ba292635549ff82 googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch
+84973e3f11e54eb8e61eecfd6e86b349 googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test
+c39295ef9bf2e242e17965ecd4f45266 googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update
+>>>>>>> 8cdadb6496d044ad7bece3f83df068fab6a7b582

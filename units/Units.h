@@ -32,13 +32,14 @@ namespace phy {
   using Mole                = Unit<0,0,0,0,0,1,0>;
   using Candela             = Unit<0,0,0,0,0,0,1>;
   using Radian              = Unit<0,0,0,0,0,0,0>;
-  using Volt                = Unit</* implementation defined */>;
-  using Ohm                 = Unit</* implementation defined */>;
-  using Watt                = Unit</* implementation defined */>;
-  using Hertz               = Unit</* implementation defined */>;
-  using Pascal              = Unit</* implementation defined */>;
-  using Speed               = Unit</* implementation defined */>;
-  using Newton              = Unit</* implementation defined */>;
+
+  using Volt                = Unit<2,1,-3,-1,0,0,0>;
+  using Ohm                 = Unit<2,1,-3,-2,0,0,0>;
+  using Watt                = Unit<2,1,-3,0,0,0,0>;
+  using Hertz               = Unit<0,0,-1,0,0,0,0>;
+  using Pascal              = Unit<-1,1,-2,0,0,0,0>;
+  using Speed               = Unit<1,0,-1,0,0,0,0>;
+  using Newton              = Unit<1,1,-2,0,0,0,0>;
 
   /*
    * A quantity is a value associated with a unit and a ratio

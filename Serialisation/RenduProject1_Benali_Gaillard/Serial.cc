@@ -114,8 +114,9 @@ namespace serial {
 
     std::size_t IBinaryFile::read(std::byte* data, std::size_t size) {
         std::size_t reading = std::fread(data, 1, size, file_bi);
-        if (reading < size && std::ferror(file_bi)) {
+        if (reading < size) {
              perror("Read couldn't work");
+             throw std::runtime_error("Read error");
              return reading;
         }
         return reading;
@@ -248,6 +249,7 @@ namespace serial {
         std::size_t writting = fwrite(data,1,size,file_bo);
         if(writting < size) {
             perror("Write couldn't work");
+            throw std::runtime_error("Write error");
             return writting;
         }
         return writting;

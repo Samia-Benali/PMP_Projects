@@ -4,11 +4,7 @@
 # compile CXX with /usr/bin/clang++
 CXX_DEFINES = 
 
-<<<<<<< HEAD
 CXX_INCLUDES = -I/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src/googlemock/include -I/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src/googlemock -isystem /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src/googletest/include -isystem /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src/googletest
-=======
-CXX_INCLUDES = -I/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-src/googlemock/include -I/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-src/googlemock -isystem /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-src/googletest/include -isystem /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-src/googletest
->>>>>>> 8cdadb6496d044ad7bece3f83df068fab6a7b582
 
 CXX_FLAGS = -Wall -Wshadow -Wconversion -Wundef -DGTEST_HAS_PTHREAD=1 -fexceptions -W -Wpointer-arith -Wreturn-type -Wcast-qual -Wwrite-strings -Wswitch -Wunused-parameter -Wcast-align -Winline -Wredundant-decls -Wchar-subscripts
 

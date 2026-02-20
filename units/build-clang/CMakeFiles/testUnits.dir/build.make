@@ -53,17 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-<<<<<<< HEAD
 CMAKE_SOURCE_DIR = /home/samia/Documents/L3-CMI/PMP_Projects/units
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang
-=======
-CMAKE_SOURCE_DIR = /home/kilian/Bureau/Univ/PMP/PMP_Projects/units
-
-# The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang
->>>>>>> 8cdadb6496d044ad7bece3f83df068fab6a7b582
 
 # Include any dependencies generated for this target.
 include CMakeFiles/testUnits.dir/depend.make
@@ -77,7 +70,6 @@ include CMakeFiles/testUnits.dir/progress.make
 include CMakeFiles/testUnits.dir/flags.make
 
 CMakeFiles/testUnits.dir/testUnits.cc.o: CMakeFiles/testUnits.dir/flags.make
-<<<<<<< HEAD
 CMakeFiles/testUnits.dir/testUnits.cc.o: /home/samia/Documents/L3-CMI/PMP_Projects/units/testUnits.cc
 CMakeFiles/testUnits.dir/testUnits.cc.o: CMakeFiles/testUnits.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/testUnits.dir/testUnits.cc.o"
@@ -90,20 +82,6 @@ CMakeFiles/testUnits.dir/testUnits.cc.i: cmake_force
 CMakeFiles/testUnits.dir/testUnits.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/testUnits.dir/testUnits.cc.s"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/samia/Documents/L3-CMI/PMP_Projects/units/testUnits.cc -o CMakeFiles/testUnits.dir/testUnits.cc.s
-=======
-CMakeFiles/testUnits.dir/testUnits.cc.o: /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/testUnits.cc
-CMakeFiles/testUnits.dir/testUnits.cc.o: CMakeFiles/testUnits.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/testUnits.dir/testUnits.cc.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/testUnits.dir/testUnits.cc.o -MF CMakeFiles/testUnits.dir/testUnits.cc.o.d -o CMakeFiles/testUnits.dir/testUnits.cc.o -c /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/testUnits.cc
-
-CMakeFiles/testUnits.dir/testUnits.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/testUnits.dir/testUnits.cc.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/testUnits.cc > CMakeFiles/testUnits.dir/testUnits.cc.i
-
-CMakeFiles/testUnits.dir/testUnits.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/testUnits.dir/testUnits.cc.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/testUnits.cc -o CMakeFiles/testUnits.dir/testUnits.cc.s
->>>>>>> 8cdadb6496d044ad7bece3f83df068fab6a7b582
 
 # Object files for target testUnits
 testUnits_OBJECTS = \
@@ -117,15 +95,9 @@ testUnits: CMakeFiles/testUnits.dir/build.make
 testUnits: lib/libgtest_main.a
 testUnits: lib/libgtest.a
 testUnits: CMakeFiles/testUnits.dir/link.txt
-<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable testUnits"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testUnits.dir/link.txt --verbose=$(VERBOSE)
 	/usr/bin/cmake -D TEST_TARGET=testUnits -D TEST_EXECUTABLE=/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/testUnits -D TEST_EXECUTOR= -D TEST_WORKING_DIR=/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang -D TEST_EXTRA_ARGS= -D TEST_PROPERTIES= -D TEST_PREFIX= -D TEST_SUFFIX= -D TEST_FILTER= -D NO_PRETTY_TYPES=FALSE -D NO_PRETTY_VALUES=FALSE -D TEST_LIST=testUnits_TESTS -D CTEST_FILE=/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/testUnits[1]_tests.cmake -D TEST_DISCOVERY_TIMEOUT=5 -D TEST_XML_OUTPUT_DIR= -P /usr/share/cmake-3.28/Modules/GoogleTestAddTests.cmake
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable testUnits"
-	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testUnits.dir/link.txt --verbose=$(VERBOSE)
-	/usr/bin/cmake -D TEST_TARGET=testUnits -D TEST_EXECUTABLE=/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/testUnits -D TEST_EXECUTOR= -D TEST_WORKING_DIR=/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang -D TEST_EXTRA_ARGS= -D TEST_PROPERTIES= -D TEST_PREFIX= -D TEST_SUFFIX= -D TEST_FILTER= -D NO_PRETTY_TYPES=FALSE -D NO_PRETTY_VALUES=FALSE -D TEST_LIST=testUnits_TESTS -D CTEST_FILE=/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/testUnits[1]_tests.cmake -D TEST_DISCOVERY_TIMEOUT=5 -D TEST_XML_OUTPUT_DIR= -P /usr/share/cmake-3.28/Modules/GoogleTestAddTests.cmake
->>>>>>> 8cdadb6496d044ad7bece3f83df068fab6a7b582
 
 # Rule to build all files generated by this target.
 CMakeFiles/testUnits.dir/build: testUnits
@@ -136,10 +108,6 @@ CMakeFiles/testUnits.dir/clean:
 .PHONY : CMakeFiles/testUnits.dir/clean
 
 CMakeFiles/testUnits.dir/depend:
-<<<<<<< HEAD
 	cd /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/samia/Documents/L3-CMI/PMP_Projects/units /home/samia/Documents/L3-CMI/PMP_Projects/units /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/CMakeFiles/testUnits.dir/DependInfo.cmake "--color=$(COLOR)"
-=======
-	cd /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/kilian/Bureau/Univ/PMP/PMP_Projects/units /home/kilian/Bureau/Univ/PMP/PMP_Projects/units /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/CMakeFiles/testUnits.dir/DependInfo.cmake "--color=$(COLOR)"
->>>>>>> 8cdadb6496d044ad7bece3f83df068fab6a7b582
 .PHONY : CMakeFiles/testUnits.dir/depend
 

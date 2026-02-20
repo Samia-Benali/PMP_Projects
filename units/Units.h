@@ -66,31 +66,30 @@ namespace phy {
    * Various quantities
    */
 
-  using Length                = Qty</* implementation defined */>;
-  using Mass                  = Qty</* implementation defined */>;
-  using Time                  = Qty</* implementation defined */>;
-  using Current               = Qty</* implementation defined */>;
-  using Temperature           = Qty</* implementation defined */>;
-  using Amount                = Qty</* implementation defined */>;
-  using LuminousIntensity     = Qty</* implementation defined */>;
+  using Length                = Qty<Metre>;
+  using Mass                  = Qty<Kilogram>;
+  using Time                  = Qty<Second>;
+  using Current               = Qty<Ampere>;
+  using Temperature           = Qty<Kelvin>;
+  using Amount                = Qty<Mole>;
+  using LuminousIntensity     = Qty<Candela>;
 
-  using Frequency             = Qty</* implementation defined */>;
-  using Force                 = Qty</* implementation defined */>;
-  using MeterSecond           = Qty</* implementation defined */>;
-  using ElectricPotential     = Qty</* implementation defined */>;
-  using ElectricalResistance  = Qty</* implementation defined */>;
-  using Power                 = Qty</* implementation defined */>;
-  using Pressure              = Qty</* implementation defined */>;
+  using Frequency             = Qty<Hertz>;
+  using Force                 = Qty<Newton>;
+  using MeterSecond           = Qty<Speed>;
+  using ElectricPotential     = Qty<Volt>;
+  using ElectricalResistance  = Qty<Ohm>;
+  using Power                 = Qty<Watt>;
+  using Pressure              = Qty<Pascal>;
 
   /*
    * Some weird quantities
    */
-
-  using Mile                  = Qty</* implementation defined */>;
-  using Yard                  = Qty</* implementation defined */>;
-  using Foot                  = Qty</* implementation defined */>;
-  using Inch                  = Qty</* implementation defined */>;
-  using Knot                  = Qty</* implementation defined */>;
+  using Inch                  = Qty<Metre, std::ratio<10000, 393701 >>;
+  using Foot                  = Qty<Inch, std::ratio<12, 1>>;
+  using Yard                  = Qty<Foot, std::ratio<3, 1>>;
+  using Mile                  = Qty<Inch, std::ratio<1760, 1>>;
+  using Knot                  = Qty<MeterSecond, std::ratio<100000000, 51444444>>;
 
   /*
    * Comparison operators

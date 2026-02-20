@@ -53,17 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-<<<<<<< HEAD
 CMAKE_SOURCE_DIR = /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-subbuild
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-subbuild
-=======
-CMAKE_SOURCE_DIR = /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild
-
-# The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild
->>>>>>> 8cdadb6496d044ad7bece3f83df068fab6a7b582
 
 # Utility rule file for googletest-populate.
 
@@ -84,23 +77,15 @@ CMakeFiles/googletest-populate-complete: googletest-populate-prefix/src/googlete
 CMakeFiles/googletest-populate-complete: googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build
 CMakeFiles/googletest-populate-complete: googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install
 CMakeFiles/googletest-populate-complete: googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test
-<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Completed 'googletest-populate'"
 	/usr/bin/cmake -E make_directory /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-subbuild/CMakeFiles
 	/usr/bin/cmake -E touch /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-subbuild/CMakeFiles/googletest-populate-complete
 	/usr/bin/cmake -E touch /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-done
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Completed 'googletest-populate'"
-	/usr/bin/cmake -E make_directory /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild/CMakeFiles
-	/usr/bin/cmake -E touch /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild/CMakeFiles/googletest-populate-complete
-	/usr/bin/cmake -E touch /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-done
->>>>>>> 8cdadb6496d044ad7bece3f83df068fab6a7b582
 
 googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update:
 .PHONY : googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update
 
 googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build: googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure
-<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "No build step for 'googletest-populate'"
 	cd /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-build && /usr/bin/cmake -E echo_append
 	cd /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-build && /usr/bin/cmake -E touch /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build
@@ -132,64 +117,20 @@ googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-pat
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "No patch step for 'googletest-populate'"
 	/usr/bin/cmake -E echo_append
 	/usr/bin/cmake -E touch /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "No build step for 'googletest-populate'"
-	cd /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-build && /usr/bin/cmake -E echo_append
-	cd /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-build && /usr/bin/cmake -E touch /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build
-
-googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure: googletest-populate-prefix/tmp/googletest-populate-cfgcmd.txt
-googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure: googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "No configure step for 'googletest-populate'"
-	cd /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-build && /usr/bin/cmake -E echo_append
-	cd /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-build && /usr/bin/cmake -E touch /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure
-
-googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download: googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-gitinfo.txt
-googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download: googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Performing download step (git clone) for 'googletest-populate'"
-	cd /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps && /usr/bin/cmake -P /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild/googletest-populate-prefix/tmp/googletest-populate-gitclone.cmake
-	cd /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps && /usr/bin/cmake -E touch /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download
-
-googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install: googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "No install step for 'googletest-populate'"
-	cd /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-build && /usr/bin/cmake -E echo_append
-	cd /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-build && /usr/bin/cmake -E touch /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install
-
-googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Creating directories for 'googletest-populate'"
-	/usr/bin/cmake -Dcfgdir= -P /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild/googletest-populate-prefix/tmp/googletest-populate-mkdirs.cmake
-	/usr/bin/cmake -E touch /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir
-
-googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch: googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch-info.txt
-googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch: googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "No patch step for 'googletest-populate'"
-	/usr/bin/cmake -E echo_append
-	/usr/bin/cmake -E touch /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch
->>>>>>> 8cdadb6496d044ad7bece3f83df068fab6a7b582
 
 googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update:
 .PHONY : googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update
 
 googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test: googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install
-<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "No test step for 'googletest-populate'"
 	cd /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-build && /usr/bin/cmake -E echo_append
 	cd /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-build && /usr/bin/cmake -E touch /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "No test step for 'googletest-populate'"
-	cd /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-build && /usr/bin/cmake -E echo_append
-	cd /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-build && /usr/bin/cmake -E touch /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test
->>>>>>> 8cdadb6496d044ad7bece3f83df068fab6a7b582
 
 googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update: googletest-populate-prefix/tmp/googletest-populate-gitupdate.cmake
 googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update: googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update-info.txt
 googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update: googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download
-<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Performing update step for 'googletest-populate'"
 	cd /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src && /usr/bin/cmake -Dcan_fetch=YES -P /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-subbuild/googletest-populate-prefix/tmp/googletest-populate-gitupdate.cmake
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Performing update step for 'googletest-populate'"
-	cd /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-src && /usr/bin/cmake -Dcan_fetch=YES -P /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild/googletest-populate-prefix/tmp/googletest-populate-gitupdate.cmake
->>>>>>> 8cdadb6496d044ad7bece3f83df068fab6a7b582
 
 googletest-populate: CMakeFiles/googletest-populate
 googletest-populate: CMakeFiles/googletest-populate-complete
@@ -213,10 +154,6 @@ CMakeFiles/googletest-populate.dir/clean:
 .PHONY : CMakeFiles/googletest-populate.dir/clean
 
 CMakeFiles/googletest-populate.dir/depend:
-<<<<<<< HEAD
 	cd /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-subbuild && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-subbuild /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-subbuild /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-subbuild /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-subbuild /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-subbuild/CMakeFiles/googletest-populate.dir/DependInfo.cmake "--color=$(COLOR)"
-=======
-	cd /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild/CMakeFiles/googletest-populate.dir/DependInfo.cmake "--color=$(COLOR)"
->>>>>>> 8cdadb6496d044ad7bece3f83df068fab6a7b582
 .PHONY : CMakeFiles/googletest-populate.dir/depend
 

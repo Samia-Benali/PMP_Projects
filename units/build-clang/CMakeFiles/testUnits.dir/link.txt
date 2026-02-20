@@ -1,0 +1,1 @@
+/usr/bin/clang++ -fsanitize=address,undefined CMakeFiles/testUnits.dir/testUnits.cc.o -o testUnits  -lstdc++ lib/libgtest_main.a lib/libgtest.a 

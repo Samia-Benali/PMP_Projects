@@ -57,17 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-<<<<<<< HEAD
 CMAKE_SOURCE_DIR = /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-subbuild
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-subbuild
-=======
-CMAKE_SOURCE_DIR = /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild
-
-# The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild
->>>>>>> 426b7249d2915e509a92cc46a7129bd99e855fcc
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -94,15 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-<<<<<<< HEAD
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-subbuild/CMakeFiles /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-subbuild//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-subbuild/CMakeFiles 0
-=======
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild/CMakeFiles /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild/CMakeFiles 0
->>>>>>> 426b7249d2915e509a92cc46a7129bd99e855fcc
 .PHONY : all
 
 # The main clean target

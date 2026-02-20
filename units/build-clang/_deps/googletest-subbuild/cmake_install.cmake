@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # Install script for directory: /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-subbuild
-=======
-# Install script for directory: /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild
->>>>>>> 426b7249d2915e509a92cc46a7129bd99e855fcc
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -49,9 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-<<<<<<< HEAD
 file(WRITE "/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-subbuild/${CMAKE_INSTALL_MANIFEST}"
-=======
-file(WRITE "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-subbuild/${CMAKE_INSTALL_MANIFEST}"
->>>>>>> 426b7249d2915e509a92cc46a7129bd99e855fcc
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

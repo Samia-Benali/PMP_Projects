@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # Install script for directory: /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src/googlemock
-=======
-# Install script for directory: /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-src/googlemock
->>>>>>> 426b7249d2915e509a92cc46a7129bd99e855fcc
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -47,7 +43,6 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "gmock" OR NOT CMAKE_INSTALL_COMPONENT)
-<<<<<<< HEAD
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src/googlemock/include/")
 endif()
 
@@ -65,34 +60,11 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "gmock" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-build/googletest/generated/gmock_main.pc")
-=======
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-src/googlemock/include/")
-endif()
-
-if(CMAKE_INSTALL_COMPONENT STREQUAL "gmock" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/lib/libgmock.a")
-endif()
-
-if(CMAKE_INSTALL_COMPONENT STREQUAL "gmock" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/lib/libgmock_main.a")
-endif()
-
-if(CMAKE_INSTALL_COMPONENT STREQUAL "gmock" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-build/googletest/generated/gmock.pc")
-endif()
-
-if(CMAKE_INSTALL_COMPONENT STREQUAL "gmock" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-build/googletest/generated/gmock_main.pc")
->>>>>>> 426b7249d2915e509a92cc46a7129bd99e855fcc
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-<<<<<<< HEAD
   include("/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-build/googletest/cmake_install.cmake")
-=======
-  include("/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-build/googletest/cmake_install.cmake")
->>>>>>> 426b7249d2915e509a92cc46a7129bd99e855fcc
 
 endif()
 

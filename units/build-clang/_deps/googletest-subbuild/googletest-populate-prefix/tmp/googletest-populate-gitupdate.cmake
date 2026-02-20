@@ -7,11 +7,7 @@ function(do_fetch)
   message(VERBOSE "Fetching latest from the remote origin")
   execute_process(
     COMMAND "/usr/bin/git" --git-dir=.git fetch --tags --force "origin"
-<<<<<<< HEAD
     WORKING_DIRECTORY "/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src"
-=======
-    WORKING_DIRECTORY "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-src"
->>>>>>> 426b7249d2915e509a92cc46a7129bd99e855fcc
     COMMAND_ERROR_IS_FATAL LAST
   )
 endfunction()
@@ -19,11 +15,7 @@ endfunction()
 function(get_hash_for_ref ref out_var err_var)
   execute_process(
     COMMAND "/usr/bin/git" --git-dir=.git rev-parse "${ref}^0"
-<<<<<<< HEAD
     WORKING_DIRECTORY "/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src"
-=======
-    WORKING_DIRECTORY "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-src"
->>>>>>> 426b7249d2915e509a92cc46a7129bd99e855fcc
     RESULT_VARIABLE error_code
     OUTPUT_VARIABLE ref_hash
     ERROR_VARIABLE error_msg
@@ -45,11 +37,7 @@ endif()
 
 execute_process(
   COMMAND "/usr/bin/git" --git-dir=.git show-ref "52eb8108c5bdec04579160ae17225d66034bd723"
-<<<<<<< HEAD
   WORKING_DIRECTORY "/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src"
-=======
-  WORKING_DIRECTORY "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-src"
->>>>>>> 426b7249d2915e509a92cc46a7129bd99e855fcc
   OUTPUT_VARIABLE show_ref_output
 )
 if(show_ref_output MATCHES "^[a-z0-9]+[ \\t]+refs/remotes/")
@@ -138,11 +126,7 @@ if(git_update_strategy MATCHES "^REBASE(_CHECKOUT)?$")
   # branch isn't tracking the one we want to checkout.
   execute_process(
     COMMAND "/usr/bin/git" --git-dir=.git symbolic-ref -q HEAD
-<<<<<<< HEAD
     WORKING_DIRECTORY "/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src"
-=======
-    WORKING_DIRECTORY "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-src"
->>>>>>> 426b7249d2915e509a92cc46a7129bd99e855fcc
     OUTPUT_VARIABLE current_branch
     OUTPUT_STRIP_TRAILING_WHITESPACE
     # Don't test for an error. If this isn't a branch, we get a non-zero error
@@ -158,11 +142,7 @@ if(git_update_strategy MATCHES "^REBASE(_CHECKOUT)?$")
   else()
     execute_process(
       COMMAND "/usr/bin/git" --git-dir=.git for-each-ref "--format=%(upstream:short)" "${current_branch}"
-<<<<<<< HEAD
       WORKING_DIRECTORY "/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src"
-=======
-      WORKING_DIRECTORY "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-src"
->>>>>>> 426b7249d2915e509a92cc46a7129bd99e855fcc
       OUTPUT_VARIABLE upstream_branch
       OUTPUT_STRIP_TRAILING_WHITESPACE
       COMMAND_ERROR_IS_FATAL ANY  # There is no error if no upstream is set
@@ -185,11 +165,7 @@ endif()
 # Check if stash is needed
 execute_process(
   COMMAND "/usr/bin/git" --git-dir=.git status --porcelain
-<<<<<<< HEAD
   WORKING_DIRECTORY "/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src"
-=======
-  WORKING_DIRECTORY "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-src"
->>>>>>> 426b7249d2915e509a92cc46a7129bd99e855fcc
   RESULT_VARIABLE error_code
   OUTPUT_VARIABLE repo_status
 )
@@ -203,11 +179,7 @@ string(LENGTH "${repo_status}" need_stash)
 if(need_stash)
   execute_process(
     COMMAND "/usr/bin/git" --git-dir=.git stash save --quiet;--include-untracked
-<<<<<<< HEAD
     WORKING_DIRECTORY "/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src"
-=======
-    WORKING_DIRECTORY "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-src"
->>>>>>> 426b7249d2915e509a92cc46a7129bd99e855fcc
     COMMAND_ERROR_IS_FATAL ANY
   )
 endif()
@@ -215,21 +187,13 @@ endif()
 if(git_update_strategy STREQUAL "CHECKOUT")
   execute_process(
     COMMAND "/usr/bin/git" --git-dir=.git checkout "${checkout_name}"
-<<<<<<< HEAD
     WORKING_DIRECTORY "/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src"
-=======
-    WORKING_DIRECTORY "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-src"
->>>>>>> 426b7249d2915e509a92cc46a7129bd99e855fcc
     COMMAND_ERROR_IS_FATAL ANY
   )
 else()
   execute_process(
     COMMAND "/usr/bin/git" --git-dir=.git rebase "${checkout_name}"
-<<<<<<< HEAD
     WORKING_DIRECTORY "/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src"
-=======
-    WORKING_DIRECTORY "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-src"
->>>>>>> 426b7249d2915e509a92cc46a7129bd99e855fcc
     RESULT_VARIABLE error_code
     OUTPUT_VARIABLE rebase_output
     ERROR_VARIABLE  rebase_output
@@ -238,11 +202,7 @@ else()
     # Rebase failed, undo the rebase attempt before continuing
     execute_process(
       COMMAND "/usr/bin/git" --git-dir=.git rebase --abort
-<<<<<<< HEAD
       WORKING_DIRECTORY "/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src"
-=======
-      WORKING_DIRECTORY "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-src"
->>>>>>> 426b7249d2915e509a92cc46a7129bd99e855fcc
     )
 
     if(NOT git_update_strategy STREQUAL "REBASE_CHECKOUT")
@@ -250,17 +210,10 @@ else()
       if(need_stash)
         execute_process(
           COMMAND "/usr/bin/git" --git-dir=.git stash pop --index --quiet
-<<<<<<< HEAD
           WORKING_DIRECTORY "/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src"
           )
       endif()
       message(FATAL_ERROR "\nFailed to rebase in: '/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src'."
-=======
-          WORKING_DIRECTORY "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-src"
-          )
-      endif()
-      message(FATAL_ERROR "\nFailed to rebase in: '/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-src'."
->>>>>>> 426b7249d2915e509a92cc46a7129bd99e855fcc
                           "\nOutput from the attempted rebase follows:"
                           "\n${rebase_output}"
                           "\n\nYou will have to resolve the conflicts manually")
@@ -281,21 +234,13 @@ else()
       COMMAND "/usr/bin/git" --git-dir=.git tag -a
               -m "ExternalProject attempting to move from here to ${checkout_name}"
               ${tag_name}
-<<<<<<< HEAD
       WORKING_DIRECTORY "/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src"
-=======
-      WORKING_DIRECTORY "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-src"
->>>>>>> 426b7249d2915e509a92cc46a7129bd99e855fcc
       COMMAND_ERROR_IS_FATAL ANY
     )
 
     execute_process(
       COMMAND "/usr/bin/git" --git-dir=.git checkout "${checkout_name}"
-<<<<<<< HEAD
       WORKING_DIRECTORY "/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src"
-=======
-      WORKING_DIRECTORY "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-src"
->>>>>>> 426b7249d2915e509a92cc46a7129bd99e855fcc
       COMMAND_ERROR_IS_FATAL ANY
     )
   endif()
@@ -305,37 +250,24 @@ if(need_stash)
   # Put back the stashed changes
   execute_process(
     COMMAND "/usr/bin/git" --git-dir=.git stash pop --index --quiet
-<<<<<<< HEAD
     WORKING_DIRECTORY "/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src"
-=======
-    WORKING_DIRECTORY "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-src"
->>>>>>> 426b7249d2915e509a92cc46a7129bd99e855fcc
     RESULT_VARIABLE error_code
     )
   if(error_code)
     # Stash pop --index failed: Try again dropping the index
     execute_process(
       COMMAND "/usr/bin/git" --git-dir=.git reset --hard --quiet
-<<<<<<< HEAD
       WORKING_DIRECTORY "/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src"
     )
     execute_process(
       COMMAND "/usr/bin/git" --git-dir=.git stash pop --quiet
       WORKING_DIRECTORY "/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src"
-=======
-      WORKING_DIRECTORY "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-src"
-    )
-    execute_process(
-      COMMAND "/usr/bin/git" --git-dir=.git stash pop --quiet
-      WORKING_DIRECTORY "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-src"
->>>>>>> 426b7249d2915e509a92cc46a7129bd99e855fcc
       RESULT_VARIABLE error_code
     )
     if(error_code)
       # Stash pop failed: Restore previous state.
       execute_process(
         COMMAND "/usr/bin/git" --git-dir=.git reset --hard --quiet ${head_sha}
-<<<<<<< HEAD
         WORKING_DIRECTORY "/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src"
       )
       execute_process(
@@ -343,15 +275,6 @@ if(need_stash)
         WORKING_DIRECTORY "/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src"
       )
       message(FATAL_ERROR "\nFailed to unstash changes in: '/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src'."
-=======
-        WORKING_DIRECTORY "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-src"
-      )
-      execute_process(
-        COMMAND "/usr/bin/git" --git-dir=.git stash pop --index --quiet
-        WORKING_DIRECTORY "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-src"
-      )
-      message(FATAL_ERROR "\nFailed to unstash changes in: '/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-src'."
->>>>>>> 426b7249d2915e509a92cc46a7129bd99e855fcc
                           "\nYou will have to resolve the conflicts manually")
     endif()
   endif()
@@ -363,11 +286,7 @@ if(init_submodules)
     COMMAND "/usr/bin/git"
             --git-dir=.git 
             submodule update --recursive --init 
-<<<<<<< HEAD
     WORKING_DIRECTORY "/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src"
-=======
-    WORKING_DIRECTORY "/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-src"
->>>>>>> 426b7249d2915e509a92cc46a7129bd99e855fcc
     COMMAND_ERROR_IS_FATAL ANY
   )
 endif()

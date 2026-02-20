@@ -53,17 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-<<<<<<< HEAD
 CMAKE_SOURCE_DIR = /home/samia/Documents/L3-CMI/PMP_Projects/units
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang
-=======
-CMAKE_SOURCE_DIR = /home/kilian/Bureau/Univ/PMP/PMP_Projects/units
-
-# The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang
->>>>>>> 426b7249d2915e509a92cc46a7129bd99e855fcc
 
 # Include any dependencies generated for this target.
 include _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/depend.make
@@ -79,7 +72,6 @@ include _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/flags.make
 _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o: _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/flags.make
 _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o: _deps/googletest-src/googletest/src/gtest_main.cc
 _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o: _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/compiler_depend.ts
-<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
 	cd /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-build/googletest && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -MF CMakeFiles/gtest_main.dir/src/gtest_main.cc.o.d -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src/googletest/src/gtest_main.cc
 
@@ -90,18 +82,6 @@ _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.i:
 _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gtest_main.dir/src/gtest_main.cc.s"
 	cd /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-build/googletest && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src/googletest/src/gtest_main.cc -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.s
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
-	cd /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-build/googletest && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -MF CMakeFiles/gtest_main.dir/src/gtest_main.cc.o.d -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-src/googletest/src/gtest_main.cc
-
-_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/gtest_main.dir/src/gtest_main.cc.i"
-	cd /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-build/googletest && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-src/googletest/src/gtest_main.cc > CMakeFiles/gtest_main.dir/src/gtest_main.cc.i
-
-_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gtest_main.dir/src/gtest_main.cc.s"
-	cd /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-build/googletest && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-src/googletest/src/gtest_main.cc -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.s
->>>>>>> 426b7249d2915e509a92cc46a7129bd99e855fcc
 
 # Object files for target gtest_main
 gtest_main_OBJECTS = \
@@ -113,33 +93,19 @@ gtest_main_EXTERNAL_OBJECTS =
 lib/libgtest_main.a: _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
 lib/libgtest_main.a: _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make
 lib/libgtest_main.a: _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/link.txt
-<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library ../../../lib/libgtest_main.a"
 	cd /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-build/googletest && $(CMAKE_COMMAND) -P CMakeFiles/gtest_main.dir/cmake_clean_target.cmake
 	cd /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-build/googletest && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gtest_main.dir/link.txt --verbose=$(VERBOSE)
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library ../../../lib/libgtest_main.a"
-	cd /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-build/googletest && $(CMAKE_COMMAND) -P CMakeFiles/gtest_main.dir/cmake_clean_target.cmake
-	cd /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-build/googletest && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gtest_main.dir/link.txt --verbose=$(VERBOSE)
->>>>>>> 426b7249d2915e509a92cc46a7129bd99e855fcc
 
 # Rule to build all files generated by this target.
 _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build: lib/libgtest_main.a
 .PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
 
 _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/clean:
-<<<<<<< HEAD
 	cd /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-build/googletest && $(CMAKE_COMMAND) -P CMakeFiles/gtest_main.dir/cmake_clean.cmake
 .PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/clean
 
 _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/depend:
 	cd /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/samia/Documents/L3-CMI/PMP_Projects/units /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src/googletest /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-build/googletest /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/DependInfo.cmake "--color=$(COLOR)"
-=======
-	cd /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-build/googletest && $(CMAKE_COMMAND) -P CMakeFiles/gtest_main.dir/cmake_clean.cmake
-.PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/clean
-
-_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/depend:
-	cd /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/kilian/Bureau/Univ/PMP/PMP_Projects/units /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-src/googletest /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-build/googletest /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/DependInfo.cmake "--color=$(COLOR)"
->>>>>>> 426b7249d2915e509a92cc46a7129bd99e855fcc
 .PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/depend
 

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+# Install script for directory: /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-src
+=======
 # Install script for directory: /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-src
+>>>>>>> 8cdadb6496d044ad7bece3f83df068fab6a7b582
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,6 +48,10 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+<<<<<<< HEAD
+  include("/home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-build/googlemock/cmake_install.cmake")
+=======
   include("/home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-build/googlemock/cmake_install.cmake")
+>>>>>>> 8cdadb6496d044ad7bece3f83df068fab6a7b582
 endif()
 

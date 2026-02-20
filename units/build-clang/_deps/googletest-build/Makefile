@@ -57,10 +57,17 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
+<<<<<<< HEAD
+CMAKE_SOURCE_DIR = /home/samia/Documents/L3-CMI/PMP_Projects/units
+
+# The top-level build directory on which CMake was run.
+CMAKE_BINARY_DIR = /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang
+=======
 CMAKE_SOURCE_DIR = /home/kilian/Bureau/Univ/PMP/PMP_Projects/units
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang
+>>>>>>> 8cdadb6496d044ad7bece3f83df068fab6a7b582
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,14 +139,24 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
+<<<<<<< HEAD
+	cd /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang && $(CMAKE_COMMAND) -E cmake_progress_start /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/CMakeFiles /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/_deps/googletest-build//CMakeFiles/progress.marks
+	cd /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/googletest-build/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang/CMakeFiles 0
+=======
 	cd /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang && $(CMAKE_COMMAND) -E cmake_progress_start /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/CMakeFiles /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/_deps/googletest-build//CMakeFiles/progress.marks
 	cd /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/googletest-build/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang/CMakeFiles 0
+>>>>>>> 8cdadb6496d044ad7bece3f83df068fab6a7b582
 .PHONY : all
 
 # The main clean target
 clean:
+<<<<<<< HEAD
+	cd /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/googletest-build/clean
+=======
 	cd /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/googletest-build/clean
+>>>>>>> 8cdadb6496d044ad7bece3f83df068fab6a7b582
 .PHONY : clean
 
 # The main clean target
@@ -148,17 +165,29 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
+<<<<<<< HEAD
+	cd /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/googletest-build/preinstall
+=======
 	cd /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/googletest-build/preinstall
+>>>>>>> 8cdadb6496d044ad7bece3f83df068fab6a7b582
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
+<<<<<<< HEAD
+	cd /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/googletest-build/preinstall
+=======
 	cd /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/googletest-build/preinstall
+>>>>>>> 8cdadb6496d044ad7bece3f83df068fab6a7b582
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
+<<<<<<< HEAD
+	cd /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+=======
 	cd /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+>>>>>>> 8cdadb6496d044ad7bece3f83df068fab6a7b582
 .PHONY : depend
 
 # Help Target
@@ -184,6 +213,10 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
+<<<<<<< HEAD
+	cd /home/samia/Documents/L3-CMI/PMP_Projects/units/build-clang && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+=======
 	cd /home/kilian/Bureau/Univ/PMP/PMP_Projects/units/build-clang && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+>>>>>>> 8cdadb6496d044ad7bece3f83df068fab6a7b582
 .PHONY : cmake_check_build_system
 

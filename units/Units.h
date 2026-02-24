@@ -47,7 +47,7 @@ namespace phy {
     using CommonRatio = std::ratio<std::gcd(R1::num, R2::num), std::lcm(R1::den, R2::den)>;
 
     template <typename U1, typename U2>
-    struct UnitMultiply {
+    struct MultiplyFunction {
       using type = Unit<
         U1::metre + U2::metre,
         U1::kilogram + U2::kilogram,
@@ -60,7 +60,7 @@ namespace phy {
     };
 
     template <typename U1, typename U2>
-    struct UnitDivide {
+    struct DivideFunction {
       using type = Unit<
         U1::metre - U2::metre,
         U1::kilogram - U2::kilogram,
@@ -117,9 +117,9 @@ namespace phy {
    * Some weird quantities
    */
   using Inch = Qty<Metre, std::ratio<254, 10000>>;
-  using Foot = Qty<Metre, std::ratio_multiply<std::ratio<12, 1>, Inch::Ratio>>;
-  using Yard = Qty<Metre, std::ratio_multiply<std::ratio<3, 1>, Foot::Ratio>>;
-  using Mile = Qty<Metre, std::ratio_multiply<std::ratio<1760, 1>, Yard::Ratio>>;
+  using Foot = Qty<Metre, std::ratio<3048, 10000>>;
+  using Yard = Qty<Metre, std::ratio<9144, 10000>>;
+  using Mile = Qty<Metre, std::ratio<160934, 100>>;
   
   using Knot = Qty<MeterSecond, std::ratio<463, 900>>;
 
@@ -129,8 +129,8 @@ namespace phy {
 
   template<typename ResQty, typename U, typename R>
   constexpr ResQty qtyCast(Qty<U,R> q) {
-    using RatioCnv = std::ratio_divide<R, typename ResQty::Ratio>;
-    return ResQty((q.value * RatioCnv::num) / RatioCnv::den);
+    using Ratio = std::ratio_divide<R, typename ResQty::Ratio>;
+    return ResQty((q.value * Ratio::num) / Ratio::den);
   }
 
   /*
@@ -157,8 +157,8 @@ namespace phy {
 
   template<typename U, typename R1, typename R2>
   constexpr bool operator==(Qty<U, R1> q1, Qty<U, R2> q2) {
-    using CommonQ = Qty<U, details::CommonRatio<R1, R2>>;
-    return qtyCast<CommonQ>(q1).value == qtyCast<CommonQ>(q2).value;
+    using Common = Qty<U, details::CommonRatio<R1, R2>>;
+    return qtyCast<Common>(q1).value == qtyCast<Common>(q2).value;
   }
 
   template<typename U, typename R1, typename R2>
@@ -207,34 +207,34 @@ namespace phy {
 
   template<typename U1, typename R1, typename U2, typename R2>
   constexpr auto operator*(Qty<U1, R1> q1, Qty<U2, R2> q2) {
-    using ResU = typename details::UnitMultiply<U1, U2>::type;
+    using ResU = typename details::MultiplyFunction<U1, U2>::type;
     using ResR = std::ratio_multiply<R1, R2>;
     return Qty<ResU, ResR>(q1.value * q2.value);
   }
 
   template<typename U1, typename R1, typename U2, typename R2>
   constexpr auto operator/(Qty<U1, R1> q1, Qty<U2, R2> q2) {
-    using ResU = typename details::UnitDivide<U1, U2>::type;
+    using ResU = typename details::DivideFunction<U1, U2>::type;
     using ResR = std::ratio_divide<R1, R2>;
     return Qty<ResU, ResR>(q1.value / q2.value);
   }
 
-  namespace literals {
+  // namespace literals {
 
-    /*
-     * Some user-defined literals
-     */
+  //   /*
+  //    * Some user-defined literals
+  //    */
 
-    inline Length operator ""_metres(unsigned long long int val);
-    inline Mass operator ""_kilograms(unsigned long long int val);
-    inline Time operator ""_seconds(unsigned long long int val);
-    inline Current operator ""_amperes(unsigned long long int val);
-    inline Temperature operator ""_kelvins(unsigned long long int val);
-    inline Amount operator ""_moles(unsigned long long int val);
-    inline LuminousIntensity operator ""_candelas(unsigned long long int val);
-    inline /* implementation defined */ operator ""_celsius(unsigned long long int val);
+  //   inline Length operator ""_metres(unsigned long long int val);
+  //   inline Mass operator ""_kilograms(unsigned long long int val);
+  //   inline Time operator ""_seconds(unsigned long long int val);
+  //   inline Current operator ""_amperes(unsigned long long int val);
+  //   inline Temperature operator ""_kelvins(unsigned long long int val);
+  //   inline Amount operator ""_moles(unsigned long long int val);
+  //   inline LuminousIntensity operator ""_candelas(unsigned long long int val);
+  //   inline /* implementation defined */ operator ""_celsius(unsigned long long int val);
 
-  }
+  // }
 
 }
 

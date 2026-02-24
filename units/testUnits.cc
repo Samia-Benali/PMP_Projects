@@ -146,11 +146,11 @@ TEST(UnitsTests, TESTArithmeticsOperatorsMinus){
 
 
 TEST(UnitsTests, TESTArithmeticsOperatorsMultiply){
-    phy::Qty<phy::Metre, std::ratio<1>> m(9);
-    phy::Qty<phy::Metre, std::ratio<1>> m2(-6);
-    auto val = m * m2;
+    phy::Qty<phy::Mole, std::ratio<1>> m1(1);    
+    phy::Qty<phy::Mole, std::ratio<1, 1000>> m2(1);
+    auto val = m1 * m2;
     fprintf(stdout, "val : %ld\n", val.value);
-    EXPECT_EQ(val.value, -54);
+    EXPECT_EQ(val.value, 1000);
 
 }
 
@@ -159,10 +159,16 @@ TEST(UnitsTests, TESTArithmeticsOperatorsMILEYARD){
     phy::Yard y(1);
     auto val = m + y;
     fprintf(stdout, "val : %ld\n", val.value);
-    EXPECT_EQ(val.value, 2);
-
+    EXPECT_EQ(val.value, 1761);
 }
 
+TEST(UnitsTests, TESTArithmeticsOperatorsMultiplyINCHFOOT){
+    phy::Inch i(5);    
+    phy::Foot f(7);    
+    auto val = i * f;
+    fprintf(stdout, "val : %ld\n", val.value);
+    EXPECT_EQ(val.value, 420);
+}
 
 
 int main(int argc, char* argv[]) {

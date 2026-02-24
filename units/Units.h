@@ -118,8 +118,8 @@ namespace phy {
    */
   using Inch = Qty<Metre, std::ratio<254, 10000>>;
   using Foot = Qty<Metre, std::ratio<3048, 10000>>;
-  using Yard = Qty<Metre, std::ratio<9144, 10000>>;
-  using Mile = Qty<Metre, std::ratio<160934, 100>>;
+  using Yard = Qty<Metre, std::ratio<1143, 1250>>;
+  using Mile = Qty<Metre, std::ratio<201168, 125>>;
   
   using Knot = Qty<MeterSecond, std::ratio<463, 900>>;
 
@@ -208,14 +208,23 @@ namespace phy {
   template<typename U1, typename R1, typename U2, typename R2>
   constexpr auto operator*(Qty<U1, R1> q1, Qty<U2, R2> q2) {
     using ResU = typename details::MultiplyFunction<U1, U2>::type;
-    using ResR = std::ratio_multiply<R1, R2>;
-    return Qty<ResU, ResR>(q1.value * q2.value);
+    using CommonR = typename details::CommonRatio<R1, R2>;
+    
+    auto v1 = qtyCast<Qty<U1, CommonR>>(q1).value;
+    auto v2 = qtyCast<Qty<U2, CommonR>>(q2).value;
+    using ResR = std::ratio_multiply<CommonR, CommonR>;
+    
+    return Qty<ResU, ResR>(v1 * v2);
   }
 
   template<typename U1, typename R1, typename U2, typename R2>
   constexpr auto operator/(Qty<U1, R1> q1, Qty<U2, R2> q2) {
     using ResU = typename details::DivideFunction<U1, U2>::type;
+    using CommonR = typename details::CommonRatio<R1, R2>;
+    auto v1 = qtyCast<Qty<U1, CommonR>>(q1).value;
+    auto v2 = qtyCast<Qty<U2, CommonR>>(q2).value;
     using ResR = std::ratio_divide<R1, R2>;
+    
     return Qty<ResU, ResR>(q1.value / q2.value);
   }
 

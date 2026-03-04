@@ -199,21 +199,22 @@ namespace phy {
    */
 
   template<typename U, typename R1, typename R2>
-  constexpr auto operator+(Qty<U, R1> q1, Qty<U, R2> q2) {
+  constexpr Qty<U, typename details::CommonRatio<R1, R2>::value> operator+(Qty<U, R1> q1, Qty<U, R2> q2) {
     using ResRatio = typename details::CommonRatio<R1, R2>::value;
     using ResQty = Qty<U, ResRatio>;
     return ResQty(qtyCast<ResQty>(q1).value + qtyCast<ResQty>(q2).value);
   }
 
   template<typename U, typename R1, typename R2>
-  constexpr auto operator-(Qty<U, R1> q1, Qty<U, R2> q2) {
+  constexpr Qty<U, typename details::CommonRatio<R1, R2>::value> operator-(Qty<U, R1> q1, Qty<U, R2> q2) {
     using ResRatio = typename details::CommonRatio<R1, R2>::value;
     using ResQty = Qty<U, ResRatio>;
     return ResQty(qtyCast<ResQty>(q1).value - qtyCast<ResQty>(q2).value);
   }
 
   template<typename U1, typename R1, typename U2, typename R2>
-  constexpr auto operator*(Qty<U1, R1> q1, Qty<U2, R2> q2) {
+  constexpr Qty<typename details::MultiplyFunction<U1, U2>::type,std::ratio_multiply<typename details::CommonRatio<R1, R2>::value, typename details::CommonRatio<R1, R2>::value>> 
+  operator*(Qty<U1, R1> q1, Qty<U2, R2> q2) {
     using ResU = typename details::MultiplyFunction<U1, U2>::type;
     using CommonR = typename details::CommonRatio<R1, R2>::value;
     
@@ -225,7 +226,8 @@ namespace phy {
   }
 
   template<typename U1, typename R1, typename U2, typename R2>
-  constexpr auto operator/(Qty<U1, R1> q1, Qty<U2, R2> q2) {
+  constexpr Qty<typename details::DivideFunction<U1, U2>::type,std::ratio_divide<R1, R2>> 
+  operator/(Qty<U1, R1> q1, Qty<U2, R2> q2) {
     using ResU = typename details::DivideFunction<U1, U2>::type;
     using CommonR = typename details::CommonRatio<R1, R2>::value;
     auto v1 = qtyCast<Qty<U1, CommonR>>(q1).value;

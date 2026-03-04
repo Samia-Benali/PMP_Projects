@@ -44,7 +44,9 @@ namespace phy {
 
   namespace details {
     template<typename R1, typename R2>
-    using CommonRatio = std::ratio<std::gcd(R1::num, R2::num), std::lcm(R1::den, R2::den)>;
+    struct CommonRatio{
+      using value = typename std::conditional<std::ratio_less<R1,R2>::value,R1,R2>::type;
+    };
 
     template <typename U1, typename U2>
     struct MultiplyFunction {
@@ -162,7 +164,7 @@ namespace phy {
 
   template<typename U, typename R1, typename R2>
   constexpr bool operator==(Qty<U, R1> q1, Qty<U, R2> q2) {
-    using Common = Qty<U, details::CommonRatio<R1, R2>>;
+    using Common = Qty<U, typename details::CommonRatio<R1, R2>::value>;
     return qtyCast<Common>(q1).value == qtyCast<Common>(q2).value;
   }
 
@@ -173,7 +175,7 @@ namespace phy {
 
   template<typename U, typename R1, typename R2>
   constexpr bool operator<(Qty<U, R1> q1, Qty<U, R2> q2) {
-    using CommonQ = Qty<U, details::CommonRatio<R1, R2>>;
+    using CommonQ = Qty<U, typename details::CommonRatio<R1, R2>::value>;
     return qtyCast<CommonQ>(q1).value < qtyCast<CommonQ>(q2).value;
   }
 
@@ -198,14 +200,14 @@ namespace phy {
 
   template<typename U, typename R1, typename R2>
   constexpr auto operator+(Qty<U, R1> q1, Qty<U, R2> q2) {
-    using ResRatio = details::CommonRatio<R1, R2>;
+    using ResRatio = typename details::CommonRatio<R1, R2>::value;
     using ResQty = Qty<U, ResRatio>;
     return ResQty(qtyCast<ResQty>(q1).value + qtyCast<ResQty>(q2).value);
   }
 
   template<typename U, typename R1, typename R2>
   constexpr auto operator-(Qty<U, R1> q1, Qty<U, R2> q2) {
-    using ResRatio = details::CommonRatio<R1, R2>;
+    using ResRatio = typename details::CommonRatio<R1, R2>::value;
     using ResQty = Qty<U, ResRatio>;
     return ResQty(qtyCast<ResQty>(q1).value - qtyCast<ResQty>(q2).value);
   }
@@ -213,7 +215,7 @@ namespace phy {
   template<typename U1, typename R1, typename U2, typename R2>
   constexpr auto operator*(Qty<U1, R1> q1, Qty<U2, R2> q2) {
     using ResU = typename details::MultiplyFunction<U1, U2>::type;
-    using CommonR = typename details::CommonRatio<R1, R2>;
+    using CommonR = typename details::CommonRatio<R1, R2>::value;
     
     auto v1 = qtyCast<Qty<U1, CommonR>>(q1).value;
     auto v2 = qtyCast<Qty<U2, CommonR>>(q2).value;
@@ -225,7 +227,7 @@ namespace phy {
   template<typename U1, typename R1, typename U2, typename R2>
   constexpr auto operator/(Qty<U1, R1> q1, Qty<U2, R2> q2) {
     using ResU = typename details::DivideFunction<U1, U2>::type;
-    using CommonR = typename details::CommonRatio<R1, R2>;
+    using CommonR = typename details::CommonRatio<R1, R2>::value;
     auto v1 = qtyCast<Qty<U1, CommonR>>(q1).value;
     auto v2 = qtyCast<Qty<U2, CommonR>>(q2).value;
     using ResR = std::ratio_divide<R1, R2>;
@@ -233,23 +235,37 @@ namespace phy {
     return Qty<ResU, ResR>(q1.value / q2.value);
   }
 
-  // namespace literals {
+  namespace literals {
 
-  //   /*
-  //    * Some user-defined literals
-  //    */
+    /*
+     * Some user-defined literals
+     */
 
-  //   inline Length operator ""_metres(unsigned long long int val);
-  //   inline Mass operator ""_kilograms(unsigned long long int val);
-  //   inline Time operator ""_seconds(unsigned long long int val);
-  //   inline Current operator ""_amperes(unsigned long long int val);
-  //   inline Temperature operator ""_kelvins(unsigned long long int val);
-  //   inline Amount operator ""_moles(unsigned long long int val);
-  //   inline LuminousIntensity operator ""_candelas(unsigned long long int val);
-  //   inline /* implementation defined */ operator ""_celsius(unsigned long long int val);
-
-  // }
-
+    inline Length operator ""_metres(unsigned long long int val){
+      return Length(val);
+    }
+    inline Mass operator ""_kilograms(unsigned long long int val){
+      return Mass(val);
+    }
+    inline Time operator ""_seconds(unsigned long long int val){
+      return Time(val);
+    }
+    inline Current operator ""_amperes(unsigned long long int val){
+      return Current(val);
+    }
+    inline Temperature operator ""_kelvins(unsigned long long int val){
+      return Temperature(val);
+    }
+    inline Amount operator ""_moles(unsigned long long int val){
+      return Amount(val);
+    }
+    inline LuminousIntensity operator ""_candelas(unsigned long long int val){
+      return LuminousIntensity(val);
+    }
+    inline Qty<Kelvin, std::ratio<1,100>> operator ""_celsius(unsigned long long int val){
+      return Qty<Kelvin, std::ratio<1,100>>((val*100) + 27315);
+    }
+  }
 }
 
 #endif // UNITS_H

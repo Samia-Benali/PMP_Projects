@@ -162,6 +162,14 @@ TEST(UnitsTests, TESTArithmeticsOperatorsMILEYARD){
     EXPECT_EQ(val.value, 1761);
 }
 
+TEST(UnitsTests, TESTArithmeticsOperatorsMILEMETRE){
+    phy::Mile m(1);
+    phy::Qty<phy::Metre, std::ratio<1>> m1(1);  
+    auto val = m + m1;
+    fprintf(stdout, "val : %ld\n", val.value);
+    EXPECT_EQ(val.value, 1610);
+}
+
 TEST(UnitsTests, TESTArithmeticsOperatorsMultiplyINCHFOOT){
     phy::Inch i(5);    
     phy::Foot f(7);    

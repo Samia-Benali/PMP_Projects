@@ -116,12 +116,17 @@ namespace phy {
   /*
    * Some weird quantities
    */
-  using Inch = Qty<Metre, std::ratio<254, 10000>>;
+  using Mile = Qty<Metre, std::ratio<1609344, 1000>>;
+  using Yard = Qty<Metre, std::ratio<9144, 10000>>;
   using Foot = Qty<Metre, std::ratio<3048, 10000>>;
-  using Yard = Qty<Metre, std::ratio<1143, 1250>>;
-  using Mile = Qty<Metre, std::ratio<201168, 125>>;
+  using Inch = Qty<Metre, std::ratio<254, 10000>>;
+
   
-  using Knot = Qty<MeterSecond, std::ratio<463, 900>>;
+  // using Mile = Qty<Metre, std::ratio<201168, 125>>;
+  // using Yard = Qty<Mile, std::ratio<1760, 1>>;
+  // using Foot = Qty<Yard, std::ratio<3, 1>>;
+  // using Inch = Qty<Foot, std::ratio<12, 1>>;
+  using Knot = Qty<MeterSecond, std::ratio<51444444, 100000000>>;
 
   /*
    * Cast function between two quantities
@@ -228,20 +233,20 @@ namespace phy {
     return Qty<ResU, ResR>(q1.value / q2.value);
   }
 
-  // namespace literals {
+  namespace literals {
 
-  //   /*
-  //    * Some user-defined literals
-  //    */
+    /*
+     * Some user-defined literals
+     */
 
-  //   inline Length operator ""_metres(unsigned long long int val);
-  //   inline Mass operator ""_kilograms(unsigned long long int val);
-  //   inline Time operator ""_seconds(unsigned long long int val);
-  //   inline Current operator ""_amperes(unsigned long long int val);
-  //   inline Temperature operator ""_kelvins(unsigned long long int val);
-  //   inline Amount operator ""_moles(unsigned long long int val);
-  //   inline LuminousIntensity operator ""_candelas(unsigned long long int val);
-  //   inline /* implementation defined */ operator ""_celsius(unsigned long long int val);
+    inline Length operator ""_metres(unsigned long long int val);
+    inline Mass operator ""_kilograms(unsigned long long int val);
+    inline Time operator ""_seconds(unsigned long long int val);
+    inline Current operator ""_amperes(unsigned long long int val);
+    inline Temperature operator ""_kelvins(unsigned long long int val);
+    inline Amount operator ""_moles(unsigned long long int val);
+    inline LuminousIntensity operator ""_candelas(unsigned long long int val);
+    inline /* implementation defined */ operator ""_celsius(unsigned long long int val);
 
   // }
 

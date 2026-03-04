@@ -233,20 +233,20 @@ namespace phy {
     return Qty<ResU, ResR>(q1.value / q2.value);
   }
 
-  namespace literals {
+  // namespace literals {
 
-    /*
-     * Some user-defined literals
-     */
+  //   /*
+  //    * Some user-defined literals
+  //    */
 
-    inline Length operator ""_metres(unsigned long long int val);
-    inline Mass operator ""_kilograms(unsigned long long int val);
-    inline Time operator ""_seconds(unsigned long long int val);
-    inline Current operator ""_amperes(unsigned long long int val);
-    inline Temperature operator ""_kelvins(unsigned long long int val);
-    inline Amount operator ""_moles(unsigned long long int val);
-    inline LuminousIntensity operator ""_candelas(unsigned long long int val);
-    inline /* implementation defined */ operator ""_celsius(unsigned long long int val);
+  //   inline Length operator ""_metres(unsigned long long int val);
+  //   inline Mass operator ""_kilograms(unsigned long long int val);
+  //   inline Time operator ""_seconds(unsigned long long int val);
+  //   inline Current operator ""_amperes(unsigned long long int val);
+  //   inline Temperature operator ""_kelvins(unsigned long long int val);
+  //   inline Amount operator ""_moles(unsigned long long int val);
+  //   inline LuminousIntensity operator ""_candelas(unsigned long long int val);
+  //   inline /* implementation defined */ operator ""_celsius(unsigned long long int val);
 
   // }
 

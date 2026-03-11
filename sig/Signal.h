@@ -11,6 +11,7 @@ namespace sig {
 
     template<typename U>
     void combine(U item) {
+      
     }
 
     result_type result() {
@@ -20,7 +21,7 @@ namespace sig {
   template<typename T>
   class LastCombiner {
   public:
-    using result_type = T;
+    using result_type = /* implementation defined */;
 
     template<typename U>
     void combine(U item) {
@@ -39,15 +40,19 @@ namespace sig {
   class VectorCombiner {
   public:
     using result_type = std::vector<T>;
+    
 
     template<typename U>
     void combine(U item) {
-      // implementation defined
+      if(std::is_same_v<U,T>)vect.insert(item);
     }
 
     result_type result() {
-      // implementation defined
+      return vect;
     }
+
+    private:
+      std::vector<T> vect;
   };
 
   enum class PredicateType {
@@ -77,9 +82,9 @@ namespace sig {
   template<typename Signature, typename Combiner = DiscardCombiner>
   class Signal {
   public:
-    using combiner_type = Combiner;
+    using combiner_type = /* implementation defined */;
 
-    using result_type = Combiner::result_type;
+    using result_type = /* implementation defined */;
 
     Signal(Combiner combiner = Combiner()) {
       // implementation defined
@@ -106,6 +111,3 @@ namespace sig {
 }
 
 #endif // SIGNAL_H
-
-
-

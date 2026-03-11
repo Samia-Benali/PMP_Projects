@@ -29,7 +29,11 @@ namespace sig {
 
     template<typename U>
     void combine(U item) {
+<<<<<<< HEAD
       last =  std::move(item);
+=======
+      if(std::is_void_v<U>) last = item;// Gérer le cas pour réussir à mettre item dans last std::move(item);
+>>>>>>> c11122c37afc54c85d8f95427918859da47a5d4d
     }
 
     result_type result() {
@@ -49,7 +53,7 @@ namespace sig {
 
     template<typename U>
     void combine(U item) {
-      if(std::is_same_v<U,T>)vect.insert(item);
+      if(std::is_void_v<U>)vect.insert(item);
     }
 
     result_type result() {

@@ -21,7 +21,7 @@ namespace sig {
   template<typename T>
   class LastCombiner {
   public:
-    using result_type = /* implementation defined */;
+    using result_type = T;
 
     template<typename U>
     void combine(U item) {
@@ -82,9 +82,9 @@ namespace sig {
   template<typename Signature, typename Combiner = DiscardCombiner>
   class Signal {
   public:
-    using combiner_type = /* implementation defined */;
+    using combiner_type = Combiner;
 
-    using result_type = /* implementation defined */;
+    using result_type = Combiner::result_type;
 
     Signal(Combiner combiner = Combiner()) {
       // implementation defined

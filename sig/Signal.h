@@ -11,11 +11,9 @@ namespace sig {
 
     template<typename U>
     void combine(U item) {
-      // implementation defined
     }
 
     result_type result() {
-      // implementation defined
     }
   };
 
@@ -26,12 +24,15 @@ namespace sig {
 
     template<typename U>
     void combine(U item) {
-      // implementation defined
+      last = // Gérer le cas pour réussir à mettre item dans last std::move(item);
     }
 
     result_type result() {
-      // implementation defined
+      return last;
     }
+  
+  private : 
+    T last;
   };
 
   template<typename T>
@@ -105,3 +106,6 @@ namespace sig {
 }
 
 #endif // SIGNAL_H
+
+
+

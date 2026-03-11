@@ -25,7 +25,7 @@ namespace sig {
 
     template<typename U>
     void combine(U item) {
-      last = // Gérer le cas pour réussir à mettre item dans last std::move(item);
+      last = test;// Gérer le cas pour réussir à mettre item dans last std::move(item);
     }
 
     result_type result() {

@@ -2,6 +2,7 @@
 #include <iostream>
 #include <gtest/gtest.h>
 
+using namespace phy::literals;
 
 // TODO : Test Nombre négatifs et cas limites
 
@@ -70,12 +71,13 @@ TEST(UnitsTests, TestOperatorsEqualEqual){
   EXPECT_FALSE(mm == mmm);
 }
 
-// TEST(UnitsTests, TestOperatorsEqualEqualMILEYARD){
-//   phy::Mile m(1);
-//   phy::Yard y(1760);
-//   EXPECT_TRUE(m == y);
+TEST(UnitsTests, TestOperatorsEqualEqualMILEYARD){
+  phy::Mile m(1);
+  phy::Yard y(1760);
+  EXPECT_TRUE(m == y);
 
-// }
+}
+
 TEST(UnitsTests, TestOperatorsEqualEqualMinus){
   phy::Qty<phy::Speed, std::ratio<1>> m(-1);
   phy::Qty<phy::Speed, std::ratio<1, 1000>> mm(-1000);
@@ -176,6 +178,46 @@ TEST(UnitsTests, TESTArithmeticsOperatorsMultiplyINCHFOOT){
     auto val = i * f;
     fprintf(stdout, "val : %ld\n", val.value);
     EXPECT_EQ(val.value, 420);
+}
+
+TEST(UnitsTests, TESTLiteralOperatorsSubstitutionMetre){
+    auto length = 100000_metres - 10000_metres;
+    EXPECT_EQ(length.value, 90000);
+}
+
+TEST(UnitsTests, TESTLiteralOperatorsMultiplicationSeconds){
+    auto time = 9_seconds * 10_seconds;
+    EXPECT_EQ(time.value, 90);
+}
+
+TEST(UnitsTests, TESTLiteralOperatorsDivisionAmount){
+    auto quantity = 130_moles / 5_moles;
+    EXPECT_EQ(quantity.value, 26);
+}
+
+TEST(UnitsTests, TESTLiteralOperatorsAdditionTemperatureWithPrecision){
+    phy::Qty<phy::Kelvin, std::ratio<1>> k(8); 
+    auto temperature = 70_celsius + k;
+    fprintf(stdout, "val : %ld\n", temperature.value);
+    EXPECT_EQ(temperature.value, 35115);
+}
+
+TEST(UnitsTests, TESTLiteralOperatorsAdditionTemperatureWithoutPrecision){
+    phy::Qty<phy::Kelvin, std::ratio<1>> k(8); 
+    auto temperature = 70_celsius + k;
+
+    phy::Temperature result = phy::qtyCast<phy::Temperature>(temperature);
+    fprintf(stdout, "val : %ld\n", result.value);
+    EXPECT_EQ(result.value, 351);
+}
+
+TEST(UnitsTests, TestOperatorsEqualEqualCelsiusKelvin){
+  phy::Qty<phy::Kelvin, std::ratio<1, 100>> k(28115);
+  fprintf(stdout, "val : %ld\n", k.value);
+  auto c = 8_celsius;
+  fprintf(stdout, "val : %ld\n", c.value);
+  EXPECT_TRUE(k == c);
+
 }
 
 

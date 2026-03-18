@@ -69,7 +69,7 @@ namespace sig {
 
 
   template<typename T, PredicateType PType = PredicateType::Unary>
-  class PredicateCombiner;
+  class PredicateCombiner {};
 
   template<typename T>
   class PredicateCombiner<T, PredicateType::Unary> {
@@ -91,7 +91,7 @@ namespace sig {
 
   private:
       std::function<bool(const T&)> predicate_val;
-      std::optional<T>              last_val;
+      std::optional<T> last_val;
   };
 
   template<typename T>
@@ -115,7 +115,7 @@ namespace sig {
 
   private:
       std::function<bool(const T&, const T&)> predicate_val;
-      std::optional<T>                         last_val;
+      std::optional<T> last_val;
   };
 
 
@@ -141,8 +141,8 @@ namespace sig {
 
     
     template<typename... CombinerArgs>
-    Signal(CombinerArgs ... args) 
-      : combiner_val(std::move<CombinerArgs>(args)...) {}
+    Signal(CombinerArgs&& ... args) 
+      : combiner_val(std::forward<CombinerArgs>(args)...) {}
 
 
     std::size_t connectSlot(std::function<R(Args...)> callback) {

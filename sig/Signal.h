@@ -104,7 +104,6 @@ namespace sig {
 
       template<typename U>
       void combine(U&& item) {
-          // predicate(item, last) : remplace si le nouvel item est "meilleur"
           if (!last_val.has_value() || predicate_val(item, *last_val)) {
               last_val = std::forward<U>(item);
           }
@@ -157,7 +156,7 @@ namespace sig {
     }
 
     result_type emitSignal(Args... args) {
-      // Copie locale : le combineur repart de zéro à chaque émission
+      // Copie locale 
       Combiner local = combiner_val;
       for (auto& [id, callback] : slots) {
         if constexpr (std::is_void_v<R>) {

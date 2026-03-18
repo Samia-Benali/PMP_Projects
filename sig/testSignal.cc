@@ -31,9 +31,6 @@ TEST(TestSignal, VectorCombiner){
 
 }
 
-TEST(TestSignal, PredicateCombinerUnary){
-
-}
 
 TEST(TestSignal, PredicateCombinerBinary){
 

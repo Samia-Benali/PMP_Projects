@@ -6,7 +6,7 @@ void callback(int param) {
   std::printf("Hello %i\n", param);
 }
 
-TEST(TestSignal, DiscardCombiner){
+TEST(TestSignal, PredicateCombinerBinary){
     
   sig::Signal<void(int)> sig;
   sig.connectSlot(callback);
@@ -31,25 +31,16 @@ TEST(TestSignal, DiscardCombiner){
 
 }
 
-// TEST(TestSignal, LastCombiner){
-    
 
-// }
+TEST(TestSignal, PredicateCombinerUnary){
+  sig::PredicateCombiner<int, sig::PredicateType::Unary> number([](int x) -> bool {return x % 10 == 0;});
+  number.combine(2);
+  number.combine(10);
+  number.combine(-100);
+  EXPECT_EQ(number.result().value(),-100);
 
-// TEST(TestSignal, VectorCombiner){
-    
+}
 
-// }
-
-// TEST(TestSignal, PredicateCombinerUnary){
-    
-
-// }
-
-// TEST(TestSignal, PredicateCombinerBinary){
-    
-
-// }
 
 int main(int argc, char* argv[]) {
   ::testing::InitGoogleTest(&argc, argv);

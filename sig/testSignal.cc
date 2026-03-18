@@ -7,7 +7,36 @@ void callback(int param) {
 }
 
 TEST(TestSignal, DiscardCombiner){
+  sig::DiscardCombiner combiner;
+  combiner.combine(42);
+  combiner.result();
+}
+
+TEST(TestSignal, LastCombiner){
+  sig::LastCombiner<int> combiner;
+  combiner.combine(42);
+  EXPECT_EQ(combiner.result(), 42);
+  combiner.combine(100);
+  EXPECT_EQ(combiner.result(), 100);
     
+
+}
+
+TEST(TestSignal, VectorCombiner){
+  sig::VectorCombiner<int> combiner;
+  combiner.combine(42);
+  combiner.combine(100);
+  std::vector<int> expected = {42, 100};
+  EXPECT_EQ(combiner.result(), expected);
+
+}
+
+TEST(TestSignal, PredicateCombinerUnary){
+
+}
+
+TEST(TestSignal, PredicateCombinerBinary){
+
   sig::Signal<void(int)> sig;
   sig.connectSlot(callback);
   int res = 0;
@@ -28,28 +57,8 @@ TEST(TestSignal, DiscardCombiner){
   result = sig2.emitSignal(8);
   EXPECT_TRUE(result);
   EXPECT_EQ(*result,8);
-
+    
 }
-
-// TEST(TestSignal, LastCombiner){
-    
-
-// }
-
-// TEST(TestSignal, VectorCombiner){
-    
-
-// }
-
-// TEST(TestSignal, PredicateCombinerUnary){
-    
-
-// }
-
-// TEST(TestSignal, PredicateCombinerBinary){
-    
-
-// }
 
 int main(int argc, char* argv[]) {
   ::testing::InitGoogleTest(&argc, argv);

@@ -3,6 +3,10 @@
 
 #include <optional>
 #include <vector>
+#include <map>
+#include <functional>
+#include <type_traits>
+
 
 namespace sig {
 
@@ -28,8 +32,8 @@ namespace sig {
     using result_type = T;
 
     template<typename U>
-    void combine(U item) {
-      if(std::is_void_v<U>) last = item;// Gérer le cas pour réussir à mettre item dans last std::move(item);
+    void combine(U&& item) {
+        last = std::forward<U>(item); 
     }
 
     result_type result() {
@@ -48,8 +52,8 @@ namespace sig {
     
 
     template<typename U>
-    void combine(U item) {
-      if(std::is_void_v<U>)vect.insert(item);
+    void combine(U&& item) {
+        vect.push_back(std::forward<U>(item));
     }
 
     result_type result() {
@@ -63,30 +67,62 @@ namespace sig {
     Binary,
   };
 
-  template<typename T, PredicateType PType = PredicateType::Binary>
-  class PredicateCombiner {
+
+  template<typename T, PredicateType PType = PredicateType::Unary>
+  class PredicateCombiner;
+
+  template<typename T>
+  class PredicateCombiner<T, PredicateType::Unary> {
   public:
-    using result_type = std::optional<T>;
+      using result_type = std::optional<T>;
 
-    PredicateCombiner(/* implementation defined */ predicate) {
-      // implementation defined
-    }
+      PredicateCombiner(std::function<bool(const T&)> predicate)
+          : predicate_val(std::move(predicate)) {}
 
-    template<typename U>
-    void combine(/* implementation defined */ item) {
-      // implementation defined
-    }
+      template<typename U>
+      void combine(U&& item) {
+          if (predicate_val(item)) {
+              last_val = std::forward<U>(item);
+          }
+      }
+      result_type result() {
+          return last_val;
+      }
 
-    result_type result() {
-      // implementation defined
-    }
+  private:
+      std::function<bool(const T&)> predicate_val;
+      std::optional<T>              last_val;
   };
 
+  template<typename T>
+  class PredicateCombiner<T, PredicateType::Binary> {
+  public:
+      using result_type = std::optional<T>;
+
+      PredicateCombiner(std::function<bool(const T&, const T&)> predicate)
+          : predicate_val(std::move(predicate)) {}
+
+      template<typename U>
+      void combine(U&& item) {
+          if (!last_val.has_value() || predicate_val(*last_val, item)) {
+              last_val = std::forward<U>(item);
+          }
+      }
+
+      result_type result() {
+          return last_val;
+      }
+
+  private:
+      std::function<bool(const T&, const T&)> predicate_val;
+      std::optional<T>                         last_val;
+  };
 
 
 
   template<typename Signature, typename Combiner = DiscardCombiner>
   class Signal;
+
   template<typename R, typename... Args, typename Combiner>
   class Signal<R(Args...), Combiner> {
 
@@ -113,13 +149,13 @@ namespace sig {
       std::size_t id = next_id++;
       slots[id] = std::move(callback);
       return id;
-    }
+    }//INT MAX soucis dans les test avec INT MAX 
 
     void disconnectSlot(std::size_t id) {
       slots.erase(id);
     }
 
-    result_type emitSignal(CombinerArgs... args) {
+    result_type emitSignal(Args... args) {
       for (auto& [id, callback] : slots) {
         if constexpr (std::is_void_v<R>) {
             callback(args...);
@@ -127,11 +163,12 @@ namespace sig {
             combiner_val.combine(callback(args...));
         }
       }
-      return combiner_val.result();
+      if constexpr (!std::is_void_v<R>) {
+        return combiner_val.result();
+      }
     }
 
   };
 
 }
-
-#endif // SIGNAL_H
+#endif //SIGNAL_H

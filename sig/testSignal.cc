@@ -15,7 +15,7 @@ TEST(TestSignal, DiscardCombiner){
   sig.emitSignal(1);
   EXPECT_EQ(res,1);
 
-  sig::Signal<int(int), sig::PredicateCombiner<int>> sig2([](int lhs, int rhs) -> bool {
+  sig::Signal<int(int), sig::PredicateCombiner<int, sig::PredicateType::Binary>> sig2([](int lhs, int rhs) -> bool {
   return lhs < rhs;
   });
   sig2.connectSlot([](int x) { return x;});

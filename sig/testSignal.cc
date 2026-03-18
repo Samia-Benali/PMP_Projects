@@ -60,6 +60,17 @@ TEST(TestSignal, PredicateCombinerBinary){
     
 }
 
+
+TEST(TestSignal, PredicateCombinerUnary){
+  sig::PredicateCombiner<int, sig::PredicateType::Unary> number([](int x) -> bool {return x % 10 == 0;});
+  number.combine(2);
+  number.combine(10);
+  number.combine(-100);
+  EXPECT_EQ(number.result().value(),-100);
+
+}
+
+
 int main(int argc, char* argv[]) {
   ::testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();
